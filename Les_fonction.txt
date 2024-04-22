@@ -1,0 +1,28 @@
+Etudiant : consultation et telechargement des document.
+
+Enseignants : Consultation, Poser les notes, CRUD des notes, Poser les documents, Noter l'abcssence.
+
+Administration : Poser les emploies du temps. (Pour eleve et professeur).
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Étudiant :
+
+Consultation des documents : Les étudiants peuvent consulter les documents pédagogiques tels que les cours, les devoirs, les syllabus, etc.
+Téléchargement des documents : Les étudiants peuvent télécharger les documents pertinents nécessaires à leurs études.
+
+
+Enseignants :
+
+Consultation : Les enseignants peuvent consulter les informations relatives à leurs cours, tels que les listes d'étudiants inscrits, les horaires, etc.
+Pose des notes : Les enseignants peuvent saisir et enregistrer les notes attribuées aux étudiants pour différentes évaluations.
+CRUD des notes : CRUD (Create, Read, Update, Delete) Les enseignants peuvent créer, lire, mettre à jour et supprimer les notes des étudiants.
+Pose des documents : Les enseignants peuvent télécharger et partager des documents tels que des présentations, des devoirs, des feuilles de travail, etc.
+Noter l'absence : Les enseignants peuvent enregistrer les absences des étudiants lors des cours.
+
+
+Administration :
+
+Pose des emplois du temps : L'administration est responsable de la création et de la gestion des emplois du temps pour les étudiants et les enseignants, en veillant à ce que les cours soient planifiés de manière adéquate.
