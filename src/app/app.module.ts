@@ -5,13 +5,11 @@ import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { InfoEleveComponent } from './info-eleve/info-eleve.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    InfoEleveComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
