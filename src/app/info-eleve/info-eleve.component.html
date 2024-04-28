@@ -1,18 +1,72 @@
-<!-- info-personnelle.component.html -->
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h2>Informations personnelles de l'élève</h2>
-      <img class="image" src="assets/info.png" alt="Icone de consultation d'infos">
-    </div>
-    <div class="card-body">
-      <p><strong>Nom:</strong> {{ nom }}</p>
-      <p><strong>Prénom:</strong> {{ prenom }}</p>
-      <p><strong>Âge:</strong> {{ age }}</p>
-      <div class="buttons">
-        <button mat-raised-button color="primary">Modifier</button>
-        <button mat-raised-button color="warn">Supprimer</button>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>information personnelles</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2>Informations personnelles de l'élève</h2>
+        <img class="image" src="assets/info.png" alt="Icone de consultation d'infos">
+      </div>
+      <div class="card-body">
+        <p><strong>Nom:</strong> {{ nom }}</p>
+        <p><strong>Prénom:</strong> {{ prenom }}</p>
+        <p><strong>classe:</strong> {{ classe }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <!-- Boutons Modifier et Supprimer -->
+        <div class="buttons">
+          <button mat-raised-button color="primary">Modifier</button>
+          <button mat-raised-button color="warn">Supprimer</button>
+        </div>
+        <div class="flex-container">
+          <div>
+            <button class="button" (click)="toggleAbsences()" role="button">Afficher mes absences</button>
+            <table *ngIf="showAbsences" class="table">
+              <caption *ngIf="showAbsences" class="absences-heading">Absences</caption>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Raison</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-1-30</td>
+                  <td>Maladie</td>
+                </tr>
+                <tr>
+                  <td>2024-03-02</td>
+                  <td>non justifié</td>
+                </tr>
+                <tr>
+                  <td>2023-12-25</td>
+                  <td>maladie</td>
+                </tr>
+                <tr>
+                  <td>2023-11-11</td>
+                  <td>retard</td>
+                </tr>
+
+                <!-- <tr *ngFor="let absence of absences">
+                  <td>{{ absence.date }}</td>
+                  <td>{{ absence.raison }}</td>
+                </tr> -->
+            </table>
+          </div>
+          <div *ngIf="showAbsences">
+            <img id="img_absence" src="assets/absence.png" alt="absence"/>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
+</html>
+
+

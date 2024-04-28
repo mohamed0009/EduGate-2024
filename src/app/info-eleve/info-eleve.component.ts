@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './info-eleve.component.css'
 })
 export class InfoEleveComponent {
+  showAbsences: boolean = false;
+  toggleAbsences(): void {
+    this.showAbsences = !this.showAbsences;
+  }
   nom: string = "nassiri";
   prenom: string = "ahmed";
-  age: number = 18;
+  classe: string = "info3";
+  email:string = "nassiriAhmed@gmail.com";
 }
