@@ -1,1 +1,16 @@
-<p>sidenav works!</p>
+<div class="sidenav">
+    <div class="logo-container">
+        <div class="logo"></div>
+        <div class="logo-text"></div>
+        <button class="btn-close"></button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-item" *ngFor="let data of navData">
+            <a  class="sidenav-nav-link" [routerLink]="[data.routeLink]">
+                <i class="sidenav-link-icon" [class]="data.icon">        
+                </i>
+                <span class="sidenav-link-text">{{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
