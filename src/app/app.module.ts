@@ -7,6 +7,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { InfoEleveComponent } from './info-eleve/info-eleve.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentComponent } from './student/student.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { ProfsComponent } from './profs/profs.component';
+import { NotesComponent } from './notes/notes.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +25,13 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    InfoEleveComponent
+    InfoEleveComponent,
+    SidenavComponent,
+    DashboardComponent,
+    StudentComponent,
+    AdministrationComponent,
+    ProfsComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
