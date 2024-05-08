@@ -13,6 +13,7 @@ import { StudentComponent } from './student/student.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { ProfsComponent } from './profs/profs.component';
 import { NotesComponent } from './notes/notes.component';
+import { BodyComponent } from './body/body.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     StudentComponent,
     AdministrationComponent,
     ProfsComponent,
-    NotesComponent
+    NotesComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
