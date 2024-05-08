@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
-
+interface SideNavToggle{
+  screenWith:number;
+  collapsed:boolean;
+ }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,4 +11,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EduGate';
+  isSideNavCollapsed=false;
+  screenWith=0
+
+  onToggleSideNav(data:SideNavToggle):void {
+    this.screenWith=data.screenWith;
+    this.isSideNavCollapsed=data.collapsed;
+  }
 }
