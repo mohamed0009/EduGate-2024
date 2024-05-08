@@ -1,5 +1,5 @@
 .sidenav{
-    background: #2E8B57;
+    background: linear-gradient(to left, #177543ac,  #307c49);
     transition: all .5s ease;
     position: fixed;
     z-index: 1 ;
@@ -19,6 +19,7 @@
         
             background: #fff;
             text-align: center;
+            color: #307c49;
             width: 3rem;
             min-width: 3rem;
             border-radius: 0.313rem;
