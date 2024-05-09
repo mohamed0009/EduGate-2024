@@ -66,7 +66,7 @@ body{
 }
 .absences-heading {
   margin-top: 5%;
-  color: #546bc7;
+  color: #0ab337;
   text-decoration: underline;
   font-size: larger;
 }
@@ -101,7 +101,7 @@ body{
   width: 50%;
   height: auto;
   float: right;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 
