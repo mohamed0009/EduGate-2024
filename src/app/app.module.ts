@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
-import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -14,12 +12,9 @@ import { AdministrationComponent } from './administration/administration.compone
 import { ProfsComponent } from './profs/profs.component';
 import { NotesComponent } from './notes/notes.component';
 import { BodyComponent } from './body/body.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
-];
+
 
 @NgModule({
   declarations: [
@@ -38,7 +33,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     MatCardModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

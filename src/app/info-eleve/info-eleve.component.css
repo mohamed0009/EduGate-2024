@@ -91,11 +91,11 @@ body{
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: linear-gradient(to left, #84a884, #96a3b8);
 }
 
 .table tbody tr:hover {
-  background-color: #f2f2f2;
+  background-color:linear-gradient(to left, #84a884, #96a3b8);
 }
 #img_absence {
   width: 50%;

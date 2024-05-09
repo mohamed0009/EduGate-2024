@@ -15,10 +15,10 @@ body {
 .card {
     display: flex;
     flex-direction: column;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: #fff;
-    margin: 1.25rem 0 1.25rem 0;
-    box-shadow: 0 .25rem .5rem #e6edef;
+    margin: 1.25rem 0;
+    box-shadow: 0 0.25rem 0.5rem #e6edef;
 }
 
 .card .card-head {
@@ -29,5 +29,5 @@ body {
 }
 
 .card .card-body {
-    padding: 1rem 1.5rem; 
+    padding: 1rem 1.5rem;
 }
