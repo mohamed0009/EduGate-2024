@@ -22,6 +22,6 @@ export const navbarData = [
   { 
     routeLink: 'info-eleve',
     icon: 'fas fa-info-circle',
-    label: 'Info-Eleve'
+    label: 'Info_Eleve'
   }
 ];
