@@ -14,11 +14,8 @@ import { ProfsComponent } from './profs/profs.component';
 import { NotesComponent } from './notes/notes.component';
 import { BodyComponent } from './body/body.component';
 import { AppRoutingModule } from './app-routing.module';
-<<<<<<< HEAD
-import { FormsModule } from '@angular/forms';
-=======
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
->>>>>>> 1e409a95fc0595f82297c1e2f6c8c2cd4fac555f
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -40,11 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
-<<<<<<< HEAD
+    BrowserAnimationsModule,
     FormsModule,
-=======
-    BrowserAnimationsModule
->>>>>>> 1e409a95fc0595f82297c1e2f6c8c2cd4fac555f
   ],
   providers: [],
   bootstrap: [AppComponent]
