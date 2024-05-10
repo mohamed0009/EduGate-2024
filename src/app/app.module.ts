@@ -13,6 +13,7 @@ import { ProfsComponent } from './profs/profs.component';
 import { NotesComponent } from './notes/notes.component';
 import { BodyComponent } from './body/body.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -34,6 +35,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

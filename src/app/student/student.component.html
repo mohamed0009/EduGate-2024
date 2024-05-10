@@ -1,1 +1,35 @@
-<h1>Students</h1>
+<div>
+  <label for="classSelect">Classe:</label>
+  <select id="classSelect" [(ngModel)]="selectedClass">
+    <option value="">Toutes les classes</option>
+    <option value="1">classe 1</option>
+    <option value="2">classe 2</option>
+    <option value="3">classe 3</option>
+  </select>
+</div>
+<div class="div_student" style="display: flex; justify-content: space-between;">
+  <button (click)="addStudent()" class="btn-ajouter" *ngIf="selectedClass && students.length > 0">Ajouter un nouveau étudiant</button>
+  <table *ngIf="selectedClass && filteredStudents.length > 0">
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Mot de passe</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let student of filteredStudents">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.password }}</td>
+      <td>
+        <button (click)="editStudent(student)">Modifier</button>
+        <button (click)="deleteStudent(student)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="!selectedClass || filteredStudents.length === 0" class="no-students">
+Aucun étudiant trouvé.
+</div>
