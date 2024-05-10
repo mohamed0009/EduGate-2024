@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 interface SideNavToggle{
-  screenWith:number;
+  screenWidth:number;
   collapsed:boolean;
  }
 @Component({
@@ -12,10 +12,10 @@ interface SideNavToggle{
 export class AppComponent {
   title = 'EduGate';
   isSideNavCollapsed=false;
-  screenWith=0
+  screenWidth=0
 
   onToggleSideNav(data:SideNavToggle):void {
-    this.screenWith=data.screenWith;
+    this.screenWidth=data.screenWidth;
     this.isSideNavCollapsed=data.collapsed;
   }
 }
