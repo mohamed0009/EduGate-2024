@@ -13,13 +13,15 @@
     <tr>
       <th>ID</th>
       <th>Nom</th>
+      <th>Prenom</th>
       <th>Email</th>
       <th>Mot de passe</th>
       <th>Action</th>
     </tr>
     <tr *ngFor="let student of filteredStudents">
       <td>{{ student.id }}</td>
-      <td>{{ student.name }}</td>
+      <td>{{ student.nom }}</td>
+      <td>{{ student.prenom}}</td>
       <td>{{ student.email }}</td>
       <td>{{ student.password }}</td>
       <td>

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 interface Student {
   id: number;
-  name: string;
+  nom: string;
+  prenom:string;
   email: string;
   password: string;
   class: number;
@@ -15,12 +16,12 @@ interface Student {
 })
 export class StudentComponent {
   students: Student[] = [
-    { id: 1, name: 'John Doe', email: 'john.doe@example.com', password: 'password1', class: 1 },
-    { id: 2, name: 'Jane Doe', email: 'jane.doe@example.com', password: 'password2', class: 2 },
-    { id: 3, name: 'Bob Smith', email: 'bob.smith@example.com', password: 'password3', class: 3 },
-    { id: 4, name: 'Alice Johnson', email: 'alice.johnson@example.com', password: 'password4', class: 1 },
-    { id: 5, name: 'Charlie Brown', email: 'charlie.brown@example.com', password: 'password5', class: 2 },
-    { id: 6, name: 'David Williams', email: 'david.williams@example.com', password: 'password6', class: 3 }
+    { id: 1, nom: 'John',prenom: 'Doe' ,email: 'john.doe@example.com', password: 'password1', class: 1 },
+    { id: 2, nom: 'Jane',prenom: 'Doe', email: 'jane.doe@example.com', password: 'password2', class: 2 },
+    { id: 3, nom: 'Bob',prenom: 'Smith', email: 'bob.smith@example.com', password: 'password3', class: 3 },
+    { id: 4, nom: 'Alice',prenom: 'Johnson', email: 'alice.johnson@example.com', password: 'password4', class: 1 },
+    { id: 5, nom: 'Charlie',prenom: 'Brown', email: 'charlie.brown@example.com', password: 'password5', class: 2 },
+    { id: 6, nom: 'David',prenom: 'Williams', email: 'david.williams@example.com', password: 'password6', class: 3 }
   ];
 
   selectedClass: number | string = '';
@@ -39,7 +40,8 @@ export class StudentComponent {
   addStudent() {
     const newStudent: Student = {
       id: this.students.length + 1,
-      name: '',
+      nom: '',
+      prenom:'',
       email: '',
       password: '',
       class: 0
