@@ -64,7 +64,7 @@
                         border: 1px solid transparent;
                         margin-left: 5px;
                         outline: 0;
-                        color: #495057;
+                        color: #495751;
 
                         .flag{
                            height: 17px;
@@ -77,7 +77,7 @@
                     .head-menu-item-btn:hover{
                        background: #eff2f3;
                        .menu-icon{
-                        color: #699dfa;
+                        color: #11d0a0;
                        }
                     }
                 }
@@ -103,7 +103,7 @@
                     position: absolute;
                     top:-2px;
                     right: -3px;
-                    background: #699dfa;
+                    background: #22d785;
                   &.pluse{
                     animation: pluse-animation 1.2s infinite ;
                   }
@@ -125,7 +125,7 @@
 
 @keyframes pluse-animation {
     0%{
-        box-shadow: 0 0 0 0 rgba(26 ,104 ,206 ,0.6);
+        box-shadow: 0 0 0 0 rgba(26, 206, 101, 0.6);
     }
     100%{
         box-shadow: 0 0 0 13px rgba(17 ,64 ,126 ,0);
