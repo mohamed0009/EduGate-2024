@@ -1,10 +1,62 @@
 import { Component } from '@angular/core';
 
+interface Notes {
+  id: number;
+  nom: string;
+  prenom: string;
+  email: string;
+  note: number;
+  class: number;
+}
+
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrl: './notes.component.css'
+  styleUrls: ['./notes.component.css']
 })
 export class NotesComponent {
+  notes: Notes[] = [
+    { id: 1, nom: 'Youssef', prenom: 'BAHADDOU', email: 'sehrawi.hedo@marrakech.com', note: 13, class: 1 },
+    { id: 2, nom: 'Jad', prenom: 'Jarid', email: 'jadJarid@example.com', note: 19, class: 2 },
+    { id: 3, nom: 'Bouchaib', prenom: 'Rachidi', email: 'BouchaibRachidi@example.com', note: 12, class: 3 },
+    { id: 4, nom: 'Abdeltif', prenom: 'Hassan', email: 'AliHassan@example.com', note: 15, class: 1 },
+    { id: 5, nom: 'Hamada', prenom: 'Ridawi', email: 'ridawiHamada@example.com', note: 13, class: 2 },
+    { id: 6, nom: 'Hemida', prenom: 'kasawi', email: 'kasawihmida@example.com', note: 12, class: 3 }
+  ];
 
+  selectedClass: number | string = '';
+
+  get filteredNotes(): Notes[] {
+    if (this.selectedClass === '') {
+      return this.notes;
+    }
+
+    const selectedClassNumber = parseInt(this.selectedClass as string);
+
+    return this.notes.filter(note => note.class === selectedClassNumber);
+  }
+
+  addNote() {
+    const newNote: Notes = {
+      id: this.notes.length + 1,
+      nom: '',
+      prenom: '',
+      email: '',
+      note: 0,
+      class: 0
+    };
+
+    this.notes.push(newNote);
+  }
+
+  editNotes(note: Notes) {
+  }
+
+  deleteNotes(note: Notes) {
+    const index = this.notes.indexOf(note);
+
+    if (index > -1) {
+      this.notes.splice(index, 1);
+    }
+  }
 }
