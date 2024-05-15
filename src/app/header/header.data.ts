@@ -39,7 +39,7 @@ export const usersItems = [
   },
   {
     icon: 'far fa-cog',
-    label: 'Profile',
+    label: 'Setting',
   },
   {
     icon: 'far fa-unlock-alt',
