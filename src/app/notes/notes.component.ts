@@ -24,16 +24,19 @@ export class NotesComponent {
     { id: 6, nom: 'Hemida', prenom: 'kasawi', email: 'kasawihmida@example.com', note: 12, class: 3 }
   ];
 
-  selectedClass: number | string = '';
+  selectedClass: number | string = '1';
+  sortOrder: string = '1'; // Default sort order
 
   get filteredNotes(): Notes[] {
-    if (this.selectedClass === '') {
-      return this.notes;
+    let filteredNotes = this.selectedClass === '' ? this.notes : this.notes.filter(note => note.class === parseInt(this.selectedClass as string));
+
+    if (this.sortOrder === '1') {
+      filteredNotes.sort((a, b) => b.note - a.note); // Sort by highest note
+    } else if (this.sortOrder === '2') {
+      filteredNotes.sort((a, b) => a.note - b.note); // Sort by lowest note
     }
 
-    const selectedClassNumber = parseInt(this.selectedClass as string);
-
-    return this.notes.filter(note => note.class === selectedClassNumber);
+    return filteredNotes;
   }
 
   addNote() {
@@ -50,6 +53,7 @@ export class NotesComponent {
   }
 
   editNotes(note: Notes) {
+    // Your edit logic here
   }
 
   deleteNotes(note: Notes) {
