@@ -16,6 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import {OverlayModule} from '@angular/cdk/overlay' ;
+import {CdkMenuModule} from '@angular/cdk/menu';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    OverlayModule,
+    CdkMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

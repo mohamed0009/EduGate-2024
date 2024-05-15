@@ -1,4 +1,5 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
   @Input() screenWidth = 0;
   canShowSearchAsOverlay =false;
   
-constructor(){ }
+constructor(@Inject(PLATFORM_ID) private platformId: Object){ }
 
 
 @HostListener('window:resize', ['$event'])
@@ -23,7 +24,8 @@ onResize(event: any) {
 }
 
 ngOnInit(): void {
-    this.checkCanShowSearchAsOverlay(window.innerWidth);
+  if (isPlatformBrowser(this.platformId)) { 
+    this.checkCanShowSearchAsOverlay(window.innerWidth); }
 }
 getHeadClass(): string {
   let styleClass = '';
