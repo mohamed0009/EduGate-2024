@@ -7,7 +7,7 @@ import {
   OnInit,
   PLATFORM_ID,
 } from '@angular/core';
-import { languages } from './header.data';
+import { languages, notifications } from './header.data';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   selectedLanguage: any;
 
   languages = languages;
+  notifications = notifications;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 

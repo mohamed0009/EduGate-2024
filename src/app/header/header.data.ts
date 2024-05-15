@@ -5,7 +5,7 @@ export const languages = [
   },
 
   {
-    Language: 'French',
+    Language: ' French',
     flag: 'fr',
   },
 
@@ -13,9 +13,22 @@ export const languages = [
     Language: 'Arabic',
     flag: 'ar',
   },
+];
 
+export const notifications = [
   {
-    Language: 'German',
-    flag: 'de',
+    icon: 'far fa-cloud-download',
+    subject: 'Download complete',
+    description: 'Lorem ipsum sit amet, condstlueur ',
   },
+  {
+    icon: 'far fa-cloud-upload',
+    subject: 'Upload complete',
+    description: 'Lorem ipsum sit amet, condstlueur ',
+  },
+  {
+    icon: 'far fa-trash',
+    subject: '350 MB Trash files',
+    description: 'Lorem ipsum sit amet, condstlueur ',
+  }
 ];
