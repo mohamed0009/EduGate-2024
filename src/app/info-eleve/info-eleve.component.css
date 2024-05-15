@@ -1,11 +1,10 @@
 /* info-personnelle.component.css */
 
 body {
-  background: linear-gradient(to left, #84a884, #96a3b8);
+  background: #96a3b8;
 }
 
 .container {
-  background: linear-gradient(to left, #84a884, #96a3b8);
   padding: 20px;
   width: 70%;
   margin: 0 auto;

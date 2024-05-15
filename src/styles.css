@@ -12,7 +12,7 @@
 body {
   position: relative;
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to left, #84a884, #96a3b8);
+  background: #96a3b8;
 }
 
 .card {
