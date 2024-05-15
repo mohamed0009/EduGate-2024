@@ -16,9 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import {OverlayModule} from '@angular/cdk/overlay' ;
-import {CdkMenuModule} from '@angular/cdk/menu';
-
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import {CdkMenuModule} from '@angular/cdk/menu';
     ProfsComponent,
     NotesComponent,
     BodyComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +41,9 @@ import {CdkMenuModule} from '@angular/cdk/menu';
     BrowserAnimationsModule,
     FormsModule,
     OverlayModule,
-    CdkMenuModule
+    CdkMenuModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

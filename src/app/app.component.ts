@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 
-interface SideNavToggle{
-  screenWidth:number;
-  collapsed:boolean;
- }
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'EduGate';
-  isSideNavCollapsed=false;
-  screenWidth=0
+  isSideNavCollapsed = false;
+  screenWidth = 0;
 
-  onToggleSideNav(data:SideNavToggle):void {
-    this.screenWidth=data.screenWidth;
-    this.isSideNavCollapsed=data.collapsed;
+  onToggleSideNav(data: SideNavToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
   }
 }

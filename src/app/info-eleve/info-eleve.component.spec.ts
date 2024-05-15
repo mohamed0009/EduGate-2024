@@ -8,10 +8,9 @@ describe('InfoEleveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InfoEleveComponent]
-    })
-    .compileComponents();
-    
+      declarations: [InfoEleveComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(InfoEleveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
