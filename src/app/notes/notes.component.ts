@@ -24,7 +24,7 @@ export class NotesComponent {
     { id: 6, nom: 'Hemida', prenom: 'kasawi', email: 'kasawihmida@example.com', note: 12, class: 3 }
   ];
 
-  selectedClass: number | string = '1';
+  selectedClass: number | string = '1'; // Default selected class
   sortOrder: string = '1'; // Default sort order
 
   get filteredNotes(): Notes[] {
