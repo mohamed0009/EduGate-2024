@@ -15,6 +15,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 16px 12px rgba(7, 75, 21, 0.175);
+
 
     .head-content-left {
       .search-container {
@@ -31,13 +33,14 @@
             border-radius: 1.875rem;
             outline: 0;
           }
-          .search:focus, input:hover {
+          .search:focus,
+          input:hover {
             outline: none;
             border-color: rgba(8, 199, 75, 0.312);
             background-color: #fff;
-            transition:  ease-in 0.5s;
+            transition: ease-in 0.5s;
             box-shadow: 0 0 0 4px rgba(39, 162, 68, 0.361);
-           }
+          }
           .search-icon {
             position: absolute;
             font-size: 1rem;
@@ -291,17 +294,16 @@
     }
   }
 }
-.ripple{
+.ripple {
   background-position: center;
   background-color: #fff;
   transition: background 0.8s;
 }
-.ripple:hover{
-  background: #eff2f3 radial-gradient(circle,transparent 1%, #eff2f3 1%)
-  center/ 15000%;
+.ripple:hover {
+  background: #eff2f3 radial-gradient(circle, transparent 1%, #eff2f3 1%)
+    center/ 15000%;
 }
-.ripple:active{
+.ripple:active {
   background-color: #bec2c4;
   transition: background 0s;
-
 }
