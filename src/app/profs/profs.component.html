@@ -1,7 +1,37 @@
-<h1>Professeur </h1>
-<div class="card">
-    <div class="card-head">Lorem ipsum - professeur</div>
-    <div class="card-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ipsum eum voluptate deserunt officiis repellat eius quis nobis iusto. Dolor vero doloremque facilis quod quisquam tempore laboriosam nobis accusamus reprehenderit.
-    </div>
-</div>
+<div>
+    <label for="classSelect">Classe:</label>
+    <select id="classSelect" [(ngModel)]="selectedClass">
+      <option value="">Toutes les classes</option>
+      <option value="1">classe 1</option>
+      <option value="2">classe 2</option>
+      <option value="3">classe 3</option>
+    </select>
+  </div>
+  <div class="div_profs" style="display: flex; justify-content: space-between;">
+    <button (click)="addProf()" class="btn-ajouter" *ngIf="selectedClass && profs.length > 0">Ajouter un nouveau professeur</button>
+    <table *ngIf="selectedClass && filteredProfs.length > 0">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Mot de passe</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let prof of filteredProfs">
+        <td>{{ prof.id }}</td>
+        <td>{{ prof.nom }}</td>
+        <td>{{ prof.prenom }}</td>
+        <td>{{ prof.email }}</td>
+        <td>{{ prof.password }}</td>
+        <td>
+          <button (click)="editProf(prof)">Modifier</button>
+          <button (click)="deleteProf(prof)">Supprimer</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div *ngIf="!selectedClass || filteredProfs.length === 0" class="no-profs">
+    Aucun professeur trouvé.
+  </div>
