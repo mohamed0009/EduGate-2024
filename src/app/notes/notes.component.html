@@ -18,25 +18,25 @@
   </div>
 </div>
 
-<div class="div_notes" style="display: flex; justify-content: space-between;">
-  <table *ngIf="selectedClass && filteredNotes.length > 0">
-    <tr>
-      <th>ID</th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Email</th>
-      <th>Note</th>
-    </tr>
-    <tr *ngFor="let note of filteredNotes">
-      <td>{{ note.id }}</td>
-      <td>{{ note.nom }}</td>
-      <td>{{ note.prenom }}</td>
-      <td>{{ note.email }}</td>
-      <td>{{ note.note }}</td>
-    </tr>
-  </table>
-</div>
-
+<div class="div_notes">
+  <div class="table-container">
+    <table *ngIf="selectedClass && filteredNotes.length > 0">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Note</th>
+      </tr>
+      <tr *ngFor="let note of filteredNotes">
+        <td>{{ note.id }}</td>
+        <td>{{ note.nom }}</td>
+        <td>{{ note.prenom }}</td>
+        <td>{{ note.email }}</td>
+        <td>{{ note.note }}</td>
+      </tr>
+    </table>
+  </div>
 <div *ngIf="!selectedClass || filteredNotes.length === 0" class="no-note">
   <strong>Les notes ne sont pas encore disponibles.</strong>
 </div>

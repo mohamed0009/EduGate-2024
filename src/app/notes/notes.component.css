@@ -5,23 +5,32 @@ body {
   padding: 20px;
 }
 
+.table-container {
+  overflow-x: auto; /* Ensure the table is scrollable on small screens */
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0; /* Add some spacing around the table */
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+  padding: 12px 15px; /* Increase padding for better spacing */
+  text-align: left; /* Align text to the left for better readability */
 }
 
 th {
   background-color: #307c49;
   color: #fff;
   font-weight: bold;
+  position: sticky; /* Make headers sticky when scrolling */
+  top: 0;
+  z-index: 1;
 }
 
 td {
@@ -36,7 +45,7 @@ button {
   background-color: #307c49;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 15px; /* Increase padding for buttons */
   border-radius: 5px;
   cursor: pointer;
   margin-right: 5px;
@@ -65,10 +74,6 @@ label {
   padding: 20px;
 }
 
-.hidden {
-  display: none;
-}
-
 .btn-ajouter {
   height: 20px;
   padding-bottom: 40px;
@@ -84,5 +89,6 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
   margin-bottom: 20px;
 }
