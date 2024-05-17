@@ -6,7 +6,7 @@ body {
 }
 
 .table-container {
-  overflow-x: auto; /* Ensure the table is scrollable on small screens */
+  overflow-x: auto;
 }
 
 table {
@@ -14,21 +14,20 @@ table {
   width: 100%;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px 0; /* Add some spacing around the table */
+  margin: 20px 0;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #ddd;
-  padding: 12px 15px; /* Increase padding for better spacing */
-  text-align: left; /* Align text to the left for better readability */
+  padding: 12px 15px;
+  text-align: center; /* Aligner le texte au centre */
 }
 
 th {
   background-color: #307c49;
   color: #fff;
   font-weight: bold;
-  position: sticky; /* Make headers sticky when scrolling */
+  position: sticky;
   top: 0;
   z-index: 1;
 }
@@ -45,7 +44,7 @@ button {
   background-color: #307c49;
   color: #fff;
   border: none;
-  padding: 10px 15px; /* Increase padding for buttons */
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 5px;
@@ -75,20 +74,44 @@ label {
 }
 
 .btn-ajouter {
-  height: 20px;
-  padding-bottom: 40px;
-  margin-right: 50px;
-  margin-top: 50px;
+  margin: 20px 0;
+  display: inline-block;
 }
 
 .div_notes {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .filter-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allow items to wrap on small screens */
+  flex-wrap: wrap;
   margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
 }
