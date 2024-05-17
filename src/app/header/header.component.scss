@@ -3,7 +3,6 @@
   margin-left: 5rem;
   z-index: 1;
   transition: all 0.5s ease;
-  background: #96a3b8;
   padding: 1rem 1.5rem 0 1.5rem;
 
   position: fixed;
@@ -32,6 +31,13 @@
             border-radius: 1.875rem;
             outline: 0;
           }
+          .search:focus, input:hover {
+            outline: none;
+            border-color: rgba(8, 199, 75, 0.312);
+            background-color: #fff;
+            transition:  ease-in 0.5s;
+            box-shadow: 0 0 0 4px rgba(39, 162, 68, 0.361);
+           }
           .search-icon {
             position: absolute;
             font-size: 1rem;
