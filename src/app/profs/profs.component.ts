@@ -4,6 +4,8 @@ interface Prof {
   id: number;
   nom: string;
   prenom: string;
+  date_de_naissance: String ;
+  lieu_de_naissance:String;
   email: string;
   password: string;
   class: number;
@@ -16,12 +18,12 @@ interface Prof {
 })
 export class ProfsComponent {
   profs: Prof[] = [
-    { id: 1, nom: 'John', prenom: 'Doe', email: 'john.doe@example.com', password: 'password1', class: 1 },
-    { id: 2, nom: 'Jane', prenom: 'Doe', email: 'jane.doe@example.com', password: 'password2', class: 2 },
-    { id: 3, nom: 'Bob', prenom: 'Smith', email: 'bob.smith@example.com', password: 'password3', class: 3 },
-    { id: 4, nom: 'Alice', prenom: 'Johnson', email: 'alice.johnson@example.com', password: 'password4', class: 1 },
-    { id: 5, nom: 'Charlie', prenom: 'Brown', email: 'charlie.brown@example.com', password: 'password5', class: 2 },
-    { id: 6, nom: 'David', prenom: 'Williams', email: 'david.williams@example.com', password: 'password6', class: 3 }
+    { id: 1, nom: 'John', prenom: 'Doe', date_de_naissance: '', lieu_de_naissance: '' , email: 'john.doe@example.com', password: 'password1', class: 1 },
+    { id: 2, nom: 'Jane', prenom: 'Doe',  date_de_naissance: '' , lieu_de_naissance: '' , email: 'jane.doe@example.com', password: 'password2', class: 2 },
+    { id: 3, nom: 'Bob', prenom: 'Smith', date_de_naissance: '', lieu_de_naissance: '' , email: 'bob.smith@example.com', password: 'password3', class: 3 },
+    { id: 4, nom: 'Alice', prenom: 'Johnson',  date_de_naissance : '' , lieu_de_naissance: '' , email: 'alice.johnson@example.com', password: 'password4', class: 1 },
+    { id: 5, nom: 'Charlie', prenom: 'Brown', date_de_naissance : '', lieu_de_naissance: '' ,  email: 'charlie.brown@example.com', password: 'password5', class: 2 },
+    { id: 6, nom: 'David', prenom: 'Williams', date_de_naissance: '', lieu_de_naissance: '' , email: 'david.williams@example.com', password: 'password6', class: 3 }
   ];
 
   selectedClass: number | string = '';
@@ -42,6 +44,8 @@ export class ProfsComponent {
       id: this.profs.length + 1,
       nom: '',
       prenom: '',
+      date_de_naissance: '',
+      lieu_de_naissance: '' ,
       email: '',
       password: '',
       class: 0

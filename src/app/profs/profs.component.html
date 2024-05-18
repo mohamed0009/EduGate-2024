@@ -8,13 +8,34 @@
     </select>
   </div>
   <div class="div_profs" style="display: flex; justify-content: space-between;">
-    <button (click)="addProf()" class="btn-ajouter" *ngIf="selectedClass && profs.length > 0">Ajouter un nouveau professeur</button>
+
+    <form > 
+      <label for="id"> id : </label>
+      <input id="id" type="text" placeholder="saississez un id"> <br>
+
+      <label for="nom"> Nom: </label>
+      <input id="nom" type="text" placeholder="saississez son nom "> <br>
+
+      <label for-="prenom"> Prenom: </label>
+      <input  id="prenom" type="text" placeholder="saississez son prenom "> <br>
+
+      <label for="date_de_naissance">date_de_naissance: </label>
+      <input  id="date_de_naissance" type="text" placeholder="saississez sa date de naissance "> <br>
+
+      <label for="lieu_de_naissance"> lieu_de_naissance : </label>
+      <input id="lieu_de_naissance"  type="text" placeholder=" saississez son lieu de naissance "><br>
+      <button (click)="addProf()" class="btn-ajouter" *ngIf="selectedClass && profs.length > 0">Ajouter un nouveau professeur</button>
+
+    </form>
+
     <table *ngIf="selectedClass && filteredProfs.length > 0">
       <tr>
-        <th>ID</th>
+        <th>Id</th>
         <th>Nom</th>
         <th>Prenom</th>
-        <th>Email</th>
+        <th>date_de_naissance</th>
+        <th>lieu_de_naissance</th>
+        <th>email</th>
         <th>Mot de passe</th>
         <th>Action</th>
       </tr>
@@ -22,6 +43,8 @@
         <td>{{ prof.id }}</td>
         <td>{{ prof.nom }}</td>
         <td>{{ prof.prenom }}</td>
+        <td>{{ prof.date_de_naissance}}</td>
+        <td>{{ prof.lieu_de_naissance}}</td>
         <td>{{ prof.email }}</td>
         <td>{{ prof.password }}</td>
         <td>
