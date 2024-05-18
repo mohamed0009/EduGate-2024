@@ -98,7 +98,8 @@ export class NotesComponent {
       this.newNote.id = this.notes.length + 1;
       this.notes.push({ ...this.newNote });
     }
-    this.resetForm();
+    this.isEditMode = false; // Reset edit mode
+    this.resetNewNote(); // Reset the newNote object
   }
 
   editNoteMode(note: Notes) {
@@ -107,19 +108,15 @@ export class NotesComponent {
   }
 
   deleteNote(note: Notes) {
-    const index = this.notes.indexOf(note);
-    if (index > -1) {
-      this.notes.splice(index, 1);
-    }
-    this.resetForm();
+    this.notes = this.notes.filter(n => n.id !== note.id);
   }
 
   cancelEdit() {
-    this.resetForm();
+    this.isEditMode = false;
+    this.resetNewNote();
   }
 
-  resetForm() {
+  resetNewNote() {
     this.newNote = { id: 0, nom: '', prenom: '', email: '', note: 0, class: 0 };
-    this.isEditMode = false;
   }
 }

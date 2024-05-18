@@ -8,7 +8,6 @@
         <option value="3">classe sc.SVT</option>
       </select>
     </div>
-    <!-- Nouvelle div pour le "Trier par" -->
     <div class="sort-container">
       <label for="noteSelect">Trier par:</label>
       <select id="noteSelect" [(ngModel)]="sortOrder">
@@ -51,4 +50,28 @@
 
 <div *ngIf="!selectedClass || filteredNotes.length === 0" class="no-note">
   <strong>Les notes ne sont pas encore disponibles.</strong>
+</div>
+
+<!-- Modal for editing notes -->
+<div *ngIf="isEditMode" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="cancelEdit()">&times;</span>
+    <h2>Edit Student Note</h2>
+    <form (ngSubmit)="addOrUpdateNote()">
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" [(ngModel)]="newNote.nom" name="nom" required>
+      
+      <label for="prenom">Prénom:</label>
+      <input type="text" id="prenom" [(ngModel)]="newNote.prenom" name="prenom" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="newNote.email" name="email" required>
+      
+      <label for="note">Note:</label>
+      <input type="number" id="note" [(ngModel)]="newNote.note" name="note" required>
+      
+      <button type="submit">Enregistrer</button>
+      <button type="button" (click)="cancelEdit()">Annuler</button>
+    </form>
+  </div>
 </div>
