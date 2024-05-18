@@ -73,11 +73,6 @@ label {
   padding: 20px;
 }
 
-.btn-ajouter {
-  margin: 20px 0;
-  display: inline-block;
-}
-
 .div_notes {
   margin-top: 20px;
 }
@@ -88,30 +83,4 @@ label {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: space-between;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
 }
