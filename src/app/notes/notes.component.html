@@ -8,11 +8,14 @@
         <option value="3">classe sc.SVT</option>
       </select>
     </div>
-    <div>
+    <!-- Nouvelle div pour le "Trier par" -->
+    <div class="sort-container">
       <label for="noteSelect">Trier par:</label>
       <select id="noteSelect" [(ngModel)]="sortOrder">
-        <option value="1">Meilleure note</option>
-        <option value="2">Moins bonne note</option>
+        <option value="1">Note Ascendant</option>
+        <option value="2">Note Descendant</option>
+        <option value="3">ID</option>
+        <option value="4">Nom</option>
       </select>
     </div>
   </div>
@@ -24,9 +27,10 @@
       <tr>
         <th>ID</th>
         <th>Nom</th>
-        <th>Prenom</th>
+        <th>Prénom</th>
         <th>Email</th>
         <th>Note</th>
+        <th>Actions</th>
       </tr>
       <tr *ngFor="let note of filteredNotes">
         <td>{{ note.id }}</td>
@@ -34,9 +38,17 @@
         <td>{{ note.prenom }}</td>
         <td>{{ note.email }}</td>
         <td>{{ note.note }}</td>
+        <td class="action-cell">
+          <div class="actions">
+            <button class="action-button" (click)="editNoteMode(note)">Modifier</button>
+            <button class="action-button" (click)="deleteNote(note)">Supprimer</button>
+          </div>
+        </td>
       </tr>
     </table>
   </div>
+</div>
+
 <div *ngIf="!selectedClass || filteredNotes.length === 0" class="no-note">
   <strong>Les notes ne sont pas encore disponibles.</strong>
 </div>
