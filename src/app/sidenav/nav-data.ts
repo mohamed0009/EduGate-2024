@@ -5,6 +5,11 @@ export const navbarData = [
     label: 'Dashboard'
   },
   { 
+    routeLink: 'admin',
+    icon: 'fa fa-user',
+    label: 'Aministration'
+  },
+  { 
     routeLink: 'students',
     icon: 'fas fa-users',
     label: 'Students'

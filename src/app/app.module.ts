@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './administration/data.service';
 
 @NgModule({
   declarations: [
@@ -42,8 +44,9 @@ import { CdkMenuModule } from '@angular/cdk/menu';
     FormsModule,
     OverlayModule,
     CdkMenuModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
