@@ -12,7 +12,10 @@
 body {
   position: relative;
   font-family: "Roboto", sans-serif;
-  background: #96a3b8;
+  height: 100%;
+  /* Add your background pattern here */
+  background-image: linear-gradient(#ffffffa1 1.1rem, #cccccc49 1.2rem);
+  background-size: 100% 1.2rem;
 }
 
 .card {

@@ -1,12 +1,5 @@
 /* info-personnelle.component.css */
-
-body {
-  background: #96a3b8;
-}
-
 .container {
-  padding: 20px;
-  width: 70%;
   margin: 0 auto;
   margin-top: 5%;
 }
