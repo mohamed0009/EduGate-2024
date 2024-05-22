@@ -1,46 +1,26 @@
-<div>
-  <label for="classSelect">Classe:</label>
-  <select id="classSelect" [(ngModel)]="selectedClass">
-    <option value="">Toutes les classes</option>
-    <option value="1">classe 1</option>
-    <option value="2">classe 2</option>
-    <option value="3">classe 3</option>
-  </select>
-</div>
-<div class="div_student" style="display: flex; justify-content: space-between">
-  <button
-    (click)="addStudent()"
-    class="btn-ajouter"
-    *ngIf="selectedClass && students.length > 0"
-  >
-    Ajouter un nouveau étudiant
-  </button>
-  <table *ngIf="selectedClass && filteredStudents.length > 0">
-    <tr>
-      <th>ID</th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Email</th>
-      <th>Mot de passe</th>
-      <th>Action</th>
-    </tr>
-    <tr *ngFor="let student of filteredStudents">
-      <td>{{ student.id }}</td>
-      <td>{{ student.nom }}</td>
-      <td>{{ student.prenom }}</td>
-      <td>{{ student.email }}</td>
-      <td>{{ student.password }}</td>
-      <td>
-        <button (click)="editStudent(student)">Modifier</button>
-        <button (click)="deleteStudent(student)">Supprimer</button>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<div
-  *ngIf="!selectedClass || filteredStudents.length === 0"
-  class="no-students"
->
-  Aucun étudiant trouvé.
+<div class="container">
+  <div *ngIf="students && students.length > 0">
+    <h2>Students</h2>
+    <table class="table table-dark table-striped-columns">
+      <thead>
+        <tr>
+          <th>ID Student</th>
+          <th>Class ID</th>
+          <th>Class Level</th>
+          <th>Class Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.idEleve }}</td>
+          <td>{{ student.classe.idClasse }}</td>
+          <td>{{ student.classe.niveau }}</td>
+          <td>{{ student.classe.nomClasse }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!students || students.length === 0">
+    <p>No students found.</p>
+  </div>
 </div>

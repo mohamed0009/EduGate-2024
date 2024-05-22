@@ -20,6 +20,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './administration/data.service';
+import { StudentService } from './student/StudentService';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { DataService } from './administration/data.service';
     CdkMenuModule,
     HttpClientModule,
   ],
-  providers: [DataService],
+  providers: [StudentService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
