@@ -1,22 +1,23 @@
-<div>
+<div class="select-container">
   <label for="classSelect">Classe:</label>
-  <select id="classSelect">
-    <option value="">Toutes les classes</option>
+  <select class="styled-select" id="classSelect">
     <option value="1">classe 1</option>
     <option value="2">classe 2</option>
     <option value="3">classe 3</option>
   </select>
 </div>
-<div class="div_student" style="display: flex; justify-content: space-between">
-  <button class="btn-ajouter">Ajouter un nouveau étudiant</button>
-  <table>
-    <tr>
-      <th>idEleve</th>
-      <th>idClasse</th>
-      <th>niveau</th>
-      <th>nomClasse</th>
-      <th>Action</th>
-    </tr>
+<div>
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">idEleve</th>
+        <th scope="col">idClasse</th>
+        <th scope="col">niveau</th>
+        <th scope="col">nomClasse</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
     <tr *ngFor="let student of students">
       <td>{{ student.idEleve }}</td>
       <td>{{ student.classe.idClasse }}</td>
@@ -24,9 +25,36 @@
       <td>{{ student.classe.nomClasse }}</td>
 
       <td>
-        <button>Modifier</button>
-        <button>Supprimer</button>
+        <button class="button">Modifier</button>
+        <button class="button">Supprimer</button>
       </td>
     </tr>
+  </tbody>
   </table>
+  <div>
+    <button class="button">Ajouter un nouvel étudiant</button>
+
+  <div class="modal">
+    <div class="modal-content">
+      <form>
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" class="form-control" id="name" placeholder="Nom">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+        </div>
+      </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-primary">Ajouter</button>
+          </div>
+        </div>
+      </div>
+
 </div>
