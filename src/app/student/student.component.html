@@ -1,6 +1,6 @@
 <div>
   <label for="classSelect">Classe:</label>
-  <select id="classSelect" [(ngModel)]="selectedClass">
+  <select id="classSelect">
     <option value="">Toutes les classes</option>
     <option value="1">classe 1</option>
     <option value="2">classe 2</option>
@@ -8,39 +8,27 @@
   </select>
 </div>
 <div class="div_student" style="display: flex; justify-content: space-between">
-  <button
-    (click)="addStudent()"
-    class="btn-ajouter"
-    *ngIf="selectedClass && students.length > 0"
-  >
-    Ajouter un nouveau étudiant
-  </button>
-  <table *ngIf="selectedClass && filteredStudents.length > 0">
+  <button class="btn-ajouter">Ajouter un nouveau étudiant</button>
+  <table>
     <tr>
-      <th>ID</th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Email</th>
-      <th>Mot de passe</th>
+      <th>idEleve</th>
+      <th>idClasse</th>
+      <th>niveau</th>
+      <th>nomClasse</th>
       <th>Action</th>
     </tr>
-    <tr *ngFor="let student of filteredStudents">
-      <td>{{ student.id }}</td>
-      <td>{{ student.nom }}</td>
-      <td>{{ student.prenom }}</td>
-      <td>{{ student.email }}</td>
-      <td>{{ student.password }}</td>
+    <tr *ngFor="let student of students">
+      <td>{{ student.idEleve }}</td>
+      <td>{{ student.classe.idClasse }}</td>
+      <td>{{ student.classe.niveau }}</td>
+      <td>{{ student.classe.nomClasse }}</td>
+
       <td>
-        <button (click)="editStudent(student)">Modifier</button>
-        <button (click)="deleteStudent(student)">Supprimer</button>
+        <button>Modifier</button>
+        <button>Supprimer</button>
       </td>
     </tr>
   </table>
 </div>
 
-<div
-  *ngIf="!selectedClass || filteredStudents.length === 0"
-  class="no-students"
->
-  Aucun étudiant trouvé.
-</div>
+<div class="no-students">Aucun étudiant trouvé.</div>
