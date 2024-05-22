@@ -1,14 +1,14 @@
 <div class="container">
   <div *ngIf="admins && admins.length > 0">
-    <h2>Admins</h2>
-    <table class="table table-dark table-striped-columns">
+    <h2>Admin</h2>
+    <table class="table table-success table-striped">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Role</th>
+          <th scope="col">ID</th>
+          <th scope="col">Role</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
         <tr *ngFor="let admin of admins">
           <td>{{ admin.id }}</td>
           <td>{{ admin.role }}</td>
