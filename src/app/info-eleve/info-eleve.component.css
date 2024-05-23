@@ -1,127 +1,30 @@
-/* info-personnelle.component.css */
-.container {
-  margin: 0 auto;
-  margin-top: 5%;
-}
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card-header {
-  background-color: #c0e7c0;
-  color: #283728;
-  padding: 10px 20px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-.buttons button {
-  margin-right: 10px;
-}
-.image {
-  width: 50px;
-  height: 50px;
-  margin-top: 5px;
-}
-.buttons button {
-  background-color: #6cd56c;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.buttons button:hover {
-  background-color: #0e3e0e;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-}
-.absences-heading {
-  margin-top: 5%;
-  color: #0ab337;
-  text-decoration: underline;
-  font-size: larger;
-}
-
-.table {
-  width: 200%;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-  margin-left: 10%;
-  margin-bottom: 5%;
-  margin-top: 10%;
-}
-
-.table th,
-.table td {
-  padding: 12px;
-  text-align: left;
-}
-
-.table th {
-  background-color: #f2f2f2;
-}
-
-.table tbody tr:nth-child(even) {
-  background-color: linear-gradient(to left, #84a884, #96a3b8);
-}
-
-.table tbody tr:hover {
-  background-color: linear-gradient(to left, #84a884, #96a3b8);
-}
-#img_absence {
-  width: 50%;
-  height: auto;
-  float: right;
-  margin-top: 10%;
-}
-
-.button {
-  background-color: #c2fbd7;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
-    rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: green;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
+.container{
   text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 5%;
+  margin-left: 150px;
 }
-
-.button:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-    rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
-}
+#img{
+  height: 250px;
+  width: 300px;
+  margin-top: 2px;
+  }
+  .nav-link {
+    color: rgb(241, 247, 241);
+  }
+  form{
+    display: inline-block;
+  }
+  .card-header{
+    background-color: #307c49;
+  }
+  .card{
+    width: 650px;
+  }
+  .input-group-text{
+    background-color: #bdf1bf;
+    width: 80px;
+    color: rgb(119, 118, 118);
+  }
+  h5{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+  }

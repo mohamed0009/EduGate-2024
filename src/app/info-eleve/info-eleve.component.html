@@ -1,80 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>information personnelles</title>
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <h2>Informations personnelles de l'élève</h2>
-          <img
-            class="image"
-            src="assets/info.png"
-            alt="Icone de consultation d'infos"
-          />
-        </div>
-        <div class="card-body">
-          <p><strong>Nom:</strong> {{ nom }}</p>
-          <p><strong>Prénom:</strong> {{ prenom }}</p>
-          <p><strong>classe:</strong> {{ classe }}</p>
-          <p><strong>Email:</strong> {{ email }}</p>
-          <div class="buttons">
-            <button mat-raised-button color="primary">Modifier</button>
-          </div>
-          <div class="flex-container">
-            <div>
-              <button class="button" (click)="toggleAbsences()" role="button">
-                Afficher mes absences
-              </button>
-              <table *ngIf="showAbsences" class="table">
-                <caption *ngIf="showAbsences" class="absences-heading">
-                  Absences
-                </caption>
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Raison</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2024-1-30</td>
-                    <td>Maladie</td>
-                  </tr>
-                  <tr>
-                    <td>2024-03-02</td>
-                    <td>non justifié</td>
-                  </tr>
-                  <tr>
-                    <td>2023-12-25</td>
-                    <td>maladie</td>
-                  </tr>
-                  <tr>
-                    <td>2023-11-11</td>
-                    <td>retard</td>
-                  </tr>
-
-                  <!-- <tr *ngFor="let absence of absences">
-                  <td>{{ absence.date }}</td>
-                  <td>{{ absence.raison }}</td>
-                </tr> -->
-                </tbody>
-              </table>
-            </div>
-            <div *ngIf="showAbsences">
-              <img
-                id="img_absence"
-                src="./../../assets/absence.jpg"
-                alt="absence"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item title" (click)="showContent = 1">
+          <a class="nav-link" href="##">Mes informations</a>
+        </li>
+        <li class="nav-item title" (click)="showContent = 2">
+          <a class="nav-link" href="#">Modifier</a>
+        </li>
+        <li class="nav-item title" (click)="showContent = 3">
+          <a class="nav-link" href="#">Absence</a>
+        </li>
+      </ul>
     </div>
-  </body>
-</html>
+    <div class="card-body" *ngIf="showContent === 1">
+      <h5 class="card-title">Informations personnelles de l'élève</h5>
+      <form>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="prenom">Prénom</span>
+          <input type="text" class="form-control" aria-describedby="prenom">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="Nom">Nom</span>
+          <input type="text" class="form-control" aria-describedby="Nom">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="email">e-mail</span>
+          <input type="text" class="form-control" aria-describedby="email">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="age">Âge</span>
+          <input type="number" class="form-control" aria-describedby="age">
+        </div>
+        <!-- Add more inputs as needed -->
+      </form>
+      <img class="rounded float-end me-2" src="assets/img1.avif" id="img" alt="consultation d'infos">
+    </div>
+    <div class="card-body" *ngIf="showContent === 2">
+      <h5 class="card-title"> Modifier mes informations personnelles</h5>
+      <form>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="prenom">Prénom</span>
+          <input type="text" class="form-control" aria-describedby="prenom">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="Nom">Nom</span>
+          <input type="text" class="form-control" aria-describedby="Nom">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="email">e-mail</span>
+          <input type="text" class="form-control" aria-describedby="email">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="age">Âge</span>
+          <input type="number" class="form-control" aria-describedby="age">
+        </div>
+        <div class="input-group mb-3">
+          <button class="btn btn-success">Modifier</button>
+        </div>
+        <!-- Add more inputs as needed -->
+      </form>
+      <img class="rounded float-end me-2" src="assets/modifier.jpg" id="img" alt="consultation d'infos">
+    </div>
+    <div class="card-body" *ngIf="showContent === 3">
+      <h5 class="card-title">Mes absences</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Raison</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024-1-30</td>
+            <td>Maladie</td>
+          </tr>
+          <tr>
+            <td>2024-03-02</td>
+            <td>non justifié</td>
+          </tr>
+          <tr>
+            <td>2023-12-25</td>
+            <td>maladie</td>
+          </tr>
+          <tr>
+            <td>2023-11-11</td>
+            <td>retard</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
