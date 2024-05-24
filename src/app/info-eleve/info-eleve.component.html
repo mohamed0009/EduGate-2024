@@ -2,14 +2,14 @@
   <div class="card">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item title" (click)="showContent = 1">
-          <a class="nav-link" href="##">Mes informations</a>
+        <li class="nav-item title">
+          <a class="nav-link" href="#" (click)="showContent = 1; $event.preventDefault()">Mes informations</a>
         </li>
-        <li class="nav-item title" (click)="showContent = 2">
-          <a class="nav-link" href="#">Modifier</a>
+        <li class="nav-item title">
+          <a class="nav-link" href="#" (click)="showContent = 2; $event.preventDefault()">Modifier</a>
         </li>
-        <li class="nav-item title" (click)="showContent = 3">
-          <a class="nav-link" href="#">Absence</a>
+        <li class="nav-item title">
+          <a class="nav-link" href="#" (click)="showContent = 3; $event.preventDefault()">Absence</a>
         </li>
       </ul>
     </div>
@@ -37,7 +37,7 @@
       <img class="rounded float-end me-2" src="assets/img1.avif" id="img" alt="consultation d'infos">
     </div>
     <div class="card-body" *ngIf="showContent === 2">
-      <h5 class="card-title"> Modifier mes informations personnelles</h5>
+      <h5 class="card-title">Modifier mes informations personnelles</h5>
       <form>
         <div class="input-group mb-3">
           <span class="input-group-text" id="prenom">Prénom</span>
