@@ -26,63 +26,45 @@ export class NotesComponent {
     { id: 8, nom: 'Fatima', prenom: 'Zahra', email: 'fatima.zahra@example.ma', note: 16, class: 1 },
     { id: 9, nom: 'Said', prenom: 'Ahmed', email: 'said.ahmed@example.ma', note: 13, class: 1 },
     { id: 10, nom: 'Najat', prenom: 'Said', email: 'najat.said@example.ma', note: 18, class: 1 },
-    { id: 11, nom: 'Samira', prenom: 'Rahmouni', email: 'samira.rahmouni@example.ma', note: 17, class: 1 },
-    { id: 12, nom: 'Khalid', prenom: 'Ouabach', email: 'khalid.ouabach@example.ma', note: 15, class: 1 },
-    { id: 13, nom: 'Sara', prenom: 'Kabbaj', email: 'sara.kabbaj@example.ma', note: 19, class: 1 },
-    { id: 14, nom: 'Youssef', prenom: 'Ait', email: 'youssef.ait@example.ma', note: 12, class: 1 },
-    { id: 15, nom: 'Samira', prenom: 'Houssa', email: 'samira.houssa@example.ma', note: 17, class: 1 },
-    { id: 16, nom: 'Ali', prenom: 'Zakaria', email: 'ali.zakaria@example.ma', note: 15, class: 1 },
-    { id: 17, nom: 'Rachida', prenom: 'El', email: 'rachida.el@example.ma', note: 16, class: 1 },
-    { id: 18, nom: 'Mounir', prenom: 'Tazi', email: 'mounir.tazi@example.ma', note: 13, class: 1 },
-    { id: 19, nom: 'Nadia', prenom: 'Hachimi', email: 'nadia.hachimi@example.ma', note: 18, class: 1 },
-    { id: 20, nom: 'Hassan', prenom: 'Rouba', email: 'hassan.rouba@example.ma', note: 15, class: 1 },
-    { id: 21, nom: 'Sanaa', prenom: 'Najat', email: 'sanaa.najat3@example.ma', note: 17, class: 1 },
-    { id: 22, nom: 'Mohamed', prenom: 'Ait', email: 'mohamed.ait@example.ma', note: 14, class: 2 },
-    { id: 23, nom: 'Fatima', prenom: 'Zahra', email: 'fatima.zahra@example.ma', note: 16, class: 2 },
-    { id: 24, nom: 'Said', prenom: 'Ahmed', email: 'said.ahmed@example.ma', note: 13, class: 2 },
-    { id: 25, nom: 'Najat', prenom: 'Said', email: 'najat.said@example.ma', note: 18, class: 2 },
-    { id: 26, nom: 'Samira', prenom: 'Rahmouni', email: 'samira.rahmouni@example.ma', note: 17, class: 2 },
-    { id: 27, nom: 'Khalid', prenom: 'Ouabach', email: 'khalid.ouabach@example.ma', note: 15, class: 2 },
-    { id: 28, nom: 'Sara', prenom: 'Kabbaj', email: 'sara.kabbaj@example.ma', note: 19, class: 2 },
-    { id: 29, nom: 'Youssef', prenom: 'Ait', email: 'youssef.ait@example.ma', note: 12, class: 2 },
-    { id: 30, nom: 'Samira', prenom: 'Houssa', email: 'samira.houssa@example.ma', note: 17, class: 2 },
-    { id: 31, nom: 'Ali', prenom: 'Zakaria', email: 'ali.zakaria@example.ma', note: 15, class: 2 },
-    { id: 32, nom: 'Rachida', prenom: 'El', email: 'rachida.el@example.ma', note: 16, class: 2 },
-    { id: 33, nom: 'Mounir', prenom: 'Tazi', email: 'mounir.tazi@example.ma', note: 13, class: 2 },
-    { id: 34, nom: 'Nadia', prenom: 'Hachimi', email: 'nadia.hachimi@example.ma', note: 18, class: 2 },
-    { id: 35, nom: 'Hassan', prenom: 'Rouba', email: 'hassan.rouba@example.ma', note: 15, class: 2 },
-    { id: 36, nom: 'Sanaa', prenom: 'Najat', email: 'sanaa.najat3@example.ma', note: 17, class: 2 },
-    { id: 37, nom: 'Mohamed', prenom: 'Ait', email: 'mohamed.ait@example.ma', note: 14, class: 3 },
-    { id: 38, nom: 'Fatima', prenom: 'Zahra', email: 'fatima.zahra@example.ma', note: 16, class: 3 },
-    { id: 39, nom: 'Said', prenom: 'Ahmed', email: 'said.ahmed@example.ma', note: 13, class: 3 },
-    { id: 40, nom: 'Najat', prenom: 'Said', email: 'najat.said@example.ma', note: 18, class: 3 },
-    { id: 41, nom: 'Samira', prenom: 'Rahmouni', email: 'samira.rahmouni@example.ma', note: 17, class: 3 },
-    { id: 42, nom: 'Khalid', prenom: 'Ouabach', email: 'khalid.ouabach@example.ma', note: 15, class: 3 },
-    { id: 43, nom: 'Sara', prenom: 'Kabbaj', email: 'sara.kabbaj@example.ma', note: 19, class: 3 },
-    { id: 44, nom: 'Youssef', prenom: 'Ait', email: 'youssef.ait@example.ma', note: 12, class: 3 },
-    { id: 45, nom: 'Samira', prenom: 'Houssa', email: 'samira.houssa@example.ma', note: 17, class: 3 },
-    { id: 46, nom: 'Ali', prenom: 'Zakaria', email: 'ali.zakaria@example.ma', note: 15, class: 3 },
-    { id: 47, nom: 'Rachida', prenom: 'El', email: 'rachida.el@example.ma', note: 16, class: 3 },
-    { id: 48, nom: 'Mounir', prenom: 'Tazi', email: 'mounir.tazi@example.ma', note: 13, class: 3 },
-    { id: 49, nom: 'Nadia', prenom: 'Hachimi', email: 'nadia.hachimi@example.ma', note: 18, class: 3 },
-    { id: 50, nom: 'Hassan', prenom: 'Rouba', email: 'hassan.rouba@example.ma', note: 15, class: 3 },
-    { id: 51, nom: 'Sanaa', prenom: 'Najat', email: 'sanaa.najat3@example.ma', note: 17, class: 3 },
-    ];
+    { id: 11, nom: 'Khalid', prenom: 'Benali', email: 'khalid.benali@example.ma', note: 14, class: 1 },
+    { id: 12, nom: 'Hafsa', prenom: 'El Amrani', email: 'hafsa.elamrani@example.ma', note: 17, class: 2 },
+    { id: 13, nom: 'Yassin', prenom: 'Idrissi', email: 'yassin.idrissi@example.ma', note: 15, class: 3 },
+    { id: 14, nom: 'Ibtissam', prenom: 'Fassi', email: 'ibtissam.fassi@example.ma', note: 16, class: 1 },
+    { id: 15, nom: 'Karim', prenom: 'El Fassi', email: 'karim.elfassi@example.ma', note: 18, class: 2 },
+    { id: 16, nom: 'Amina', prenom: 'El Kandri', email: 'amina.elkandri@example.ma', note: 13, class: 3 },
+    { id: 17, nom: 'Omar', prenom: 'Bouzidi', email: 'omar.bouzidi@example.ma', note: 19, class: 1 },
+    { id: 18, nom: 'Loubna', prenom: 'Abdi', email: 'loubna.abdi@example.ma', note: 15, class: 2 },
+    { id: 19, nom: 'Hicham', prenom: 'El Arfaoui', email: 'hicham.elarfaoui@example.ma', note: 12, class: 3 },
+    { id: 20, nom: 'Rajaa', prenom: 'Lamrani', email: 'rajaa.lamrani@example.ma', note: 16, class: 1 },
+    { id: 21, nom: 'Hassan', prenom: 'El Amrani', email: 'hassan.elamrani@example.ma', note: 14, class: 1 },
+    { id: 22, nom: 'Nadia', prenom: 'Benbrahim', email: 'nadia.benbrahim@example.ma', note: 17, class: 2 },
+    { id: 23, nom: 'Ahmed', prenom: 'El Moutawakil', email: 'ahmed.elmoutawakil@example.ma', note: 15, class: 3 },
+    { id: 24, nom: 'Samira', prenom: 'El Khattabi', email: 'samira.elkhattabi@example.ma', note: 16, class: 1 },
+    { id: 25, nom: 'Younes', prenom: 'El Jari', email: 'younes.eljari@example.ma', note: 18, class: 2 },
+    { id: 26, nom: 'Imane', prenom: 'El Ouali', email: 'imane.elouali@example.ma', note: 13, class: 3 },
+    { id: 27, nom: 'Ali', prenom: 'Essaadi', email: 'ali.essaadi@example.ma', note: 19, class: 1 },
+    { id: 28, nom: 'Souad', prenom: 'El Khatabi', email: 'souad.elkhatabi@example.ma', note: 15, class: 2 },
+    { id: 29, nom: 'Karima', prenom: 'Bouhaddi', email: 'karima.bouhaddi@example.ma', note: 12, class: 3 },
+    { id: 30, nom: 'Mustapha', prenom: 'Berrada', email: 'mustapha.berrada@example.ma', note: 16, class: 1 },
+  ];
 
-  selectedClass: number | string = '1'; // Default selected class
-  sortOrder: string = '1'; // Default sort order
-  newNote: Notes = { id: 0, nom: '', prenom: '', email: '', note: 0, class: 0 }; // Initialize newNote object
-  isEditMode: boolean = false; // Track if the form is in edit mode
+  selectedClass: number | string = '1'; 
+  sortOrder: string = 'id'; 
+  sortDirection: string = 'asc'; 
+  newNote: Notes = { id: 0, nom: '', prenom: '', email: '', note: 0, class: 0 }; 
+  isEditMode: boolean = false; 
 
   get filteredNotes(): Notes[] {
     let filteredNotes = this.selectedClass === ''
       ? this.notes
       : this.notes.filter(note => note.class === parseInt(this.selectedClass as string));
 
-    if (this.sortOrder === '1') {
-      filteredNotes.sort((a, b) => b.note - a.note); // Sort by highest note
-    } else if (this.sortOrder === '2') {
-      filteredNotes.sort((a, b) => a.note - b.note); // Sort by lowest note
+    if (this.sortOrder === 'id') {
+      filteredNotes.sort((a, b) => (this.sortDirection === 'asc' ? a.id - b.id : b.id - a.id)); 
+    } else if (this.sortOrder === 'nom') {
+      filteredNotes.sort((a, b) => (this.sortDirection === 'asc' ? a.nom.localeCompare(b.nom) : b.nom.localeCompare(a.nom)));
+    } else if (this.sortOrder === 'note') {
+      filteredNotes.sort((a, b) => (this.sortDirection === 'asc' ? a.note - b.note : b.note - a.note));
     }
 
     return filteredNotes;
@@ -98,8 +80,8 @@ export class NotesComponent {
       this.newNote.id = this.notes.length + 1;
       this.notes.push({ ...this.newNote });
     }
-    this.isEditMode = false; // Reset edit mode
-    this.resetNewNote(); // Reset the newNote object
+    this.isEditMode = false;
+    this.resetNewNote();
   }
 
   editNoteMode(note: Notes) {
