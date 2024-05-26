@@ -1,60 +1,71 @@
-<div>
-    <label for="classSelect">Classe:</label>
-    <select id="classSelect" [(ngModel)]="selectedClass">
-      <option value="">Toutes les classes</option>
-      <option value="1">classe 1</option>
-      <option value="2">classe 2</option>
-      <option value="3">classe 3</option>
-    </select>
-  </div>
-  <div class="div_profs" style="display: flex; justify-content: space-between;">
+<div class="select-container">
+  <label for="classSelect">Classe:</label>
+  <select id="classSelect" [(ngModel)]="selectedClass">
+    <option value="">Toutes les classes</option>
+    <option value="1">classe 1</option>
+    <option value="2">classe 2</option>
+    <option value="3">classe 3</option>
+  </select>
+  <button (click)="openProfModal(null)" class="btn-ajouter">Ajouter un nouveau professeur</button>
+</div>
 
-    <form > 
-      <label for="id"> id : </label>
-      <input id="id" type="text" placeholder="saississez un id"> <br>
+<div class="div_profs" *ngIf="filteredProfs.length > 0">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Date de Naissance</th>
+      <th>Lieu de Naissance</th>
+      <th>Email</th>
+      <th>Mot de Passe</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let prof of filteredProfs">
+      <td>{{ prof.id }}</td>
+      <td>{{ prof.nom }}</td>
+      <td>{{ prof.prenom }}</td>
+      <td>{{ prof.date_de_naissance }}</td>
+      <td>{{ prof.lieu_de_naissance }}</td>
+      <td>{{ prof.email }}</td>
+      <td>{{ prof.password }}</td>
+      <td>
+        <button (click)="openProfModal(prof)">Modifier</button>
+        <button (click)="deleteProf(prof)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</div>
 
-      <label for="nom"> Nom: </label>
-      <input id="nom" type="text" placeholder="saississez son nom "> <br>
+<div *ngIf="filteredProfs.length === 0" class="no-profs">
+  Aucun professeur trouvé.
+</div>
 
-      <label for-="prenom"> Prenom: </label>
-      <input  id="prenom" type="text" placeholder="saississez son prenom "> <br>
-
-      <label for="date_de_naissance">date_de_naissance: </label>
-      <input  id="date_de_naissance" type="text" placeholder="saississez sa date de naissance "> <br>
-
-      <label for="lieu_de_naissance"> lieu_de_naissance : </label>
-      <input id="lieu_de_naissance"  type="text" placeholder=" saississez son lieu de naissance "><br>
-      <button (click)="addProf()" class="btn-ajouter" *ngIf="selectedClass && profs.length > 0">Ajouter un nouveau professeur</button>
-
+<!-- Modal for Adding/Editing Professors -->
+<div class="modal" [ngClass]="{'hidden': !isProfModalOpen}">
+  <div class="modal-content">
+    <span class="close" (click)="closeProfModal()">&times;</span>
+    <h2>{{ isProfEditMode ? 'Modifier le Professeur' : 'Ajouter un Nouveau Professeur' }}</h2>
+    <form (ngSubmit)="addOrUpdateProf()">
+      <label for="nom">Nom:</label>
+      <input id="nom" [(ngModel)]="currentProf.nom" name="nom" required>
+      <label for="prenom">Prénom:</label>
+      <input id="prenom" [(ngModel)]="currentProf.prenom" name="prenom" required>
+      <label for="date_de_naissance">Date de Naissance:</label>
+      <input id="date_de_naissance" [(ngModel)]="currentProf.date_de_naissance" name="date_de_naissance" required>
+      <label for="lieu_de_naissance">Lieu de Naissance:</label>
+      <input id="lieu_de_naissance" [(ngModel)]="currentProf.lieu_de_naissance" name="lieu_de_naissance" required>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="currentProf.email" name="email" required>
+      <label for="password">Mot de Passe:</label>
+      <input id="password" [(ngModel)]="currentProf.password" name="password" required>
+      <label for="class">Classe:</label>
+      <select id="class" [(ngModel)]="currentProf.class" name="class" required>
+        <option value="1">classe 1</option>
+        <option value="2">classe 2</option>
+        <option value="3">classe 3</option>
+      </select>
+      <button type="submit">{{ isProfEditMode ? 'Modifier' : 'Ajouter' }}</button>
     </form>
-
-    <table *ngIf="selectedClass && filteredProfs.length > 0">
-      <tr>
-        <th>Id</th>
-        <th>Nom</th>
-        <th>Prenom</th>
-        <th>date_de_naissance</th>
-        <th>lieu_de_naissance</th>
-        <th>email</th>
-        <th>Mot de passe</th>
-        <th>Action</th>
-      </tr>
-      <tr *ngFor="let prof of filteredProfs">
-        <td>{{ prof.id }}</td>
-        <td>{{ prof.nom }}</td>
-        <td>{{ prof.prenom }}</td>
-        <td>{{ prof.date_de_naissance}}</td>
-        <td>{{ prof.lieu_de_naissance}}</td>
-        <td>{{ prof.email }}</td>
-        <td>{{ prof.password }}</td>
-        <td>
-          <button (click)="editProf(prof)">Modifier</button>
-          <button (click)="deleteProf(prof)">Supprimer</button>
-        </td>
-      </tr>
-    </table>
   </div>
-  
-  <div *ngIf="!selectedClass || filteredProfs.length === 0" class="no-profs">
-    Aucun professeur trouvé.
-  </div>
+</div>

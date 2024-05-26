@@ -4,8 +4,8 @@ interface Prof {
   id: number;
   nom: string;
   prenom: string;
-  date_de_naissance: String ;
-  lieu_de_naissance:String;
+  date_de_naissance: string;
+  lieu_de_naissance: string;
   email: string;
   password: string;
   class: number;
@@ -18,50 +18,52 @@ interface Prof {
 })
 export class ProfsComponent {
   profs: Prof[] = [
-    { id: 1, nom: 'John', prenom: 'Doe', date_de_naissance: '', lieu_de_naissance: '' , email: 'john.doe@example.com', password: 'password1', class: 1 },
-    { id: 2, nom: 'Jane', prenom: 'Doe',  date_de_naissance: '' , lieu_de_naissance: '' , email: 'jane.doe@example.com', password: 'password2', class: 2 },
-    { id: 3, nom: 'Bob', prenom: 'Smith', date_de_naissance: '', lieu_de_naissance: '' , email: 'bob.smith@example.com', password: 'password3', class: 3 },
-    { id: 4, nom: 'Alice', prenom: 'Johnson',  date_de_naissance : '' , lieu_de_naissance: '' , email: 'alice.johnson@example.com', password: 'password4', class: 1 },
-    { id: 5, nom: 'Charlie', prenom: 'Brown', date_de_naissance : '', lieu_de_naissance: '' ,  email: 'charlie.brown@example.com', password: 'password5', class: 2 },
-    { id: 6, nom: 'David', prenom: 'Williams', date_de_naissance: '', lieu_de_naissance: '' , email: 'david.williams@example.com', password: 'password6', class: 3 }
+    { id: 1, nom: 'John', prenom: 'Doe', date_de_naissance: '01/01/2000', lieu_de_naissance: 'New York', email: 'john.doe@example.com', password: 'password', class: 1 },
+    { id: 2, nom: 'Jane', prenom: 'Smith', date_de_naissance: '02/02/2001', lieu_de_naissance: 'Los Angeles', email: 'jane.smith@example.com', password: 'password', class: 2 },
+    { id: 3, nom: 'Alice', prenom: 'Johnson', date_de_naissance: '03/03/2002', lieu_de_naissance: 'Chicago', email: 'alice.johnson@example.com', password: 'password', class: 3 }
   ];
 
-  selectedClass: number | string = '';
+  selectedClass: string = '';
+  isProfModalOpen: boolean = false;
+  isProfEditMode: boolean = false;
+  currentProf: Prof = { id: 0, nom: '', prenom: '', date_de_naissance: '', lieu_de_naissance: '', email: '', password: '', class: 1 };
 
   get filteredProfs(): Prof[] {
-    if (this.selectedClass === '') {
-      return this.profs;
+    return this.selectedClass ? this.profs.filter(prof => prof.class.toString() === this.selectedClass) : this.profs;
+  }
+
+  openProfModal(prof: Prof | null): void {
+    this.isProfModalOpen = true;
+    if (prof) {
+      this.isProfEditMode = true;
+      this.currentProf = { ...prof };
+    } else {
+      this.isProfEditMode = false;
+      this.currentProf = { id: 0, nom: '', prenom: '', date_de_naissance: '', lieu_de_naissance: '', email: '', password: '', class: 1 };
     }
-
-    // Convert selectedClass to number for comparison
-    const selectedClassNumber = parseInt(this.selectedClass as string);
-
-    return this.profs.filter(prof => prof.class === selectedClassNumber);
   }
 
-  addProf() {
-    const newProf: Prof = {
-      id: this.profs.length + 1,
-      nom: '',
-      prenom: '',
-      date_de_naissance: '',
-      lieu_de_naissance: '' ,
-      email: '',
-      password: '',
-      class: 0
-    };
-
-    this.profs.push(newProf);
+  closeProfModal(): void {
+    this.isProfModalOpen = false;
   }
 
-  editProf(prof: Prof) {
-    // Implémentation de la fonction d'édition
+  addOrUpdateProf(): void {
+    if (this.isProfEditMode) {
+      const index = this.profs.findIndex(prof => prof.id === this.currentProf.id);
+      if (index !== -1) {
+        this.profs[index] = { ...this.currentProf };
+      }
+    } else {
+      const newId = this.profs.length > 0 ? this.profs[this.profs.length - 1].id + 1 : 1;
+      this.currentProf.id = newId;
+      this.profs.push({ ...this.currentProf });
+    }
+    this.closeProfModal();
   }
 
-  deleteProf(prof: Prof) {
-    const index = this.profs.indexOf(prof);
-
-    if (index > -1) {
+  deleteProf(prof: Prof): void {
+    const index = this.profs.findIndex(p => p.id === prof.id);
+    if (index !== -1) {
       this.profs.splice(index, 1);
     }
   }
