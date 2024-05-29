@@ -6,10 +6,7 @@
           <a class="nav-link" href="#" (click)="showContent = 1; $event.preventDefault()">Mes informations</a>
         </li>
         <li class="nav-item title">
-          <a class="nav-link" href="#" (click)="showContent = 2; $event.preventDefault()">Modifier</a>
-        </li>
-        <li class="nav-item title">
-          <a class="nav-link" href="#" (click)="showContent = 3; $event.preventDefault()">Absence</a>
+          <a class="nav-link" href="#" (click)="showContent = 2; $event.preventDefault()">Mes Absences</a>
         </li>
       </ul>
     </div>
@@ -36,33 +33,8 @@
       </form>
       <img class="rounded float-end me-2" src="assets/img1.avif" id="img" alt="consultation d'infos">
     </div>
+
     <div class="card-body" *ngIf="showContent === 2">
-      <h5 class="card-title">Modifier mes informations personnelles</h5>
-      <form>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="prenom">Prénom</span>
-          <input type="text" class="form-control" aria-describedby="prenom">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="Nom">Nom</span>
-          <input type="text" class="form-control" aria-describedby="Nom">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="email">e-mail</span>
-          <input type="text" class="form-control" aria-describedby="email">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="age">Âge</span>
-          <input type="number" class="form-control" aria-describedby="age">
-        </div>
-        <div class="input-group mb-3">
-          <button class="btn btn-success">Modifier</button>
-        </div>
-        <!-- Add more inputs as needed -->
-      </form>
-      <img class="rounded float-end me-2" src="assets/modifier.jpg" id="img" alt="consultation d'infos">
-    </div>
-    <div class="card-body" *ngIf="showContent === 3">
       <h5 class="card-title">Mes absences</h5>
       <table class="table">
         <thead>
