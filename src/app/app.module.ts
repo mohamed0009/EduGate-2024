@@ -21,6 +21,7 @@ import { CdkMenuModule } from '@angular/cdk/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './administration/data.service';
 import { StudentService } from './student/StudentService';
+import { StudentMarksComponent } from './student-marks/student-marks.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { StudentService } from './student/StudentService';
     NotesComponent,
     BodyComponent,
     HeaderComponent,
+    StudentMarksComponent,
   ],
   imports: [
     BrowserModule,
