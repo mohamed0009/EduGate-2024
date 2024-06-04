@@ -1,0 +1,28 @@
+<div class="select-container">
+  <label for="classSelect">Classe:</label>
+  <select class="styled-select" id="classSelect">
+    <option value="1">classe 1</option>
+    <option value="2">classe 2</option>
+    <option value="3">classe 3</option>
+  </select>
+</div>
+<div>
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">idEleve</th>
+        <th scope="col">idClasse</th>
+        <th scope="col">niveau</th>
+        <th scope="col">nomClasse</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr *ngFor="let student of students">
+      <td>{{ student.idEleve }}</td>
+      <td>{{ student.classe.idClasse }}</td>
+      <td>{{ student.classe.niveau }}</td>
+      <td>{{ student.classe.nomClasse }}</td>
+    </tr>
+  </tbody>
+  </table>
+

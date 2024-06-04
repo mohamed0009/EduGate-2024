@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './administration/data.service';
 import { StudentService } from './student/StudentService';
 import { StudentMarksComponent } from './student-marks/student-marks.component';
+import { ConsultStudentsComponent } from './consult-students/consult-students.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { StudentMarksComponent } from './student-marks/student-marks.component';
     BodyComponent,
     HeaderComponent,
     StudentMarksComponent,
+    ConsultStudentsComponent,
   ],
   imports: [
     BrowserModule,
