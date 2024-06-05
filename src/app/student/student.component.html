@@ -30,6 +30,10 @@
       </tr>
     </tbody>
   </table>
+
+  <div>
+    <button class="button" (click)="showModal()">Ajouter un nouvel étudiant</button>
+  </div>
   <div class="modal" [ngClass]="{'show': isEditVisible}">
     <div class="modal-content">
       <h4>Modification des informations</h4>
@@ -59,10 +63,6 @@
 
     </div>
   </div>
-  <div>
-    <button class="button" (click)="showModal()">Ajouter un nouvel étudiant</button>
-  </div>
-
   <div class="modal" [ngClass]="{'show': isModalVisible}">
     <div class="modal-content">
       <h4>ajouter un nouvel étudiant</h4>
