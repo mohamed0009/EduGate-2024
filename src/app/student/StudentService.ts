@@ -19,13 +19,32 @@ export class StudentService {
       );
   }
 
+  deleteStudent(studentId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${studentId}`)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateStudent(studentId: number, student: Student): Observable<Student> {
+    return this.http.put<Student>(`${this.apiUrl}/${studentId}`, student)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  addStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(this.apiUrl, student)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse): Observable<any> {
     let errorMessage = 'Unknown error occurred';
     if (error.error instanceof ErrorEvent) {
-      // Client-side error
       errorMessage = `Error: ${error.error.message}`;
     } else {
-      // Server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.error(errorMessage);

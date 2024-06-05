@@ -6,21 +6,24 @@
     <option value="2">classe 2</option>
     <option value="3">classe 3</option>
   </select>
-  <button (click)="openProfModal(null)" class="btn-ajouter">Ajouter un nouveau professeur</button>
 </div>
 
 <div class="div_profs" *ngIf="filteredProfs.length > 0">
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Nom</th>
-      <th>Prénom</th>
-      <th>Date de Naissance</th>
-      <th>Lieu de Naissance</th>
-      <th>Email</th>
-      <th>Mot de Passe</th>
-      <th>Action</th>
-    </tr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date de Naissance</th>
+        <th>Lieu de Naissance</th>
+        <th>Email</th>
+        <th>Mot de Passe</th>
+        <th>Action</th>
+      </tr>
+  </thead>
+  <tbody class="table-group-divider">
+
     <tr *ngFor="let prof of filteredProfs">
       <td>{{ prof.id }}</td>
       <td>{{ prof.nom }}</td>
@@ -34,8 +37,10 @@
         <button (click)="deleteProf(prof)">Supprimer</button>
       </td>
     </tr>
+  </tbody>
   </table>
 </div>
+<button (click)="openProfModal(null)" class="btn-ajouter">Ajouter un nouveau professeur</button>
 
 <div *ngIf="filteredProfs.length === 0" class="no-profs">
   Aucun professeur trouvé.
