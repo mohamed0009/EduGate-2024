@@ -1,9 +1,4 @@
-export const languages = [
-  {
-    Language: 'English',
-    flag: 'us',
-  },
-
+export const languages = [ 
   {
     Language: ' French',
     flag: 'fr',
@@ -36,14 +31,6 @@ export const usersItems = [
   {
     icon: 'far fa-user',
     label: 'Profile',
-  },
-  {
-    icon: 'far fa-cog',
-    label: 'Setting',
-  },
-  {
-    icon: 'far fa-unlock-alt',
-    label: 'Lock screen',
   },
   {
     icon: 'far fa-power-off',

@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectedLanguage = this.languages[2];
+    this.selectedLanguage = this.languages[0];
 
     if (isPlatformBrowser(this.platformId)) {
       this.checkCanShowSearchAsOverlay(window.innerWidth);
