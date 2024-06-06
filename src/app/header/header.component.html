@@ -8,7 +8,7 @@
             class="search"
             name=""
             id=""
-            placeholder="Free Palestine..."
+            placeholder="Search..."
           />
           <i class="far fa-search search-icon"></i>
         </div>
@@ -25,10 +25,7 @@
     <div class="head-content-right">
       <div class="head-menu">
         <div class="head-menu-item">
-          <button
-            class="head-menu-item-btn ripple"
-            [cdkMenuTriggerFor]="languageOverlay"
-          >
+          <button class="head-menu-item-btn ripple">
             <img
               [src]="'assets/flags/' + selectedLanguage.flag + '.webp'"
               class="flag"
@@ -36,11 +33,7 @@
             />
           </button>
         </div>
-        <div class="head-menu-item">
-          <button class="head-menu-item-btn ripple">
-            <i class="far fa-expand menu-icon"></i>
-          </button>
-        </div>
+
         <div class="head-menu-item">
           <button
             class="head-menu-item-btn ripple"
@@ -49,15 +42,10 @@
             <i class="far fa-bell menu-icon"></i>
           </button>
         </div>
-        <div class="head-menu-item">
-          <button class="head-menu-item-btn ripple">
-            <i class="far fa-comment-alt menu-icon"></i>
-          </button>
-        </div>
       </div>
       <div class="head-user-avatar-container">
         <div class="head-user-avatar" [cdkMenuTriggerFor]="userOverlay">
-          <img src="../../assets/profil.jpeg" alt="user" class="user-avatar" />
+          <img src="../../assets/18514.png" alt="user" class="user-avatar" />
           <div class="circle-indicator pluse"></div>
         </div>
       </div>
@@ -73,25 +61,12 @@
   </div>
 </ng-template>
 
-<ng-template #languageOverlay>
-  <div class="overLay overLay-language overLay-fall" cdkMenu>
-    <ul>
-      <li *ngFor="let lang of languages" cdkMenuItem>
-        <img [src]="'assets/flags/' + lang.flag + '.webp'" alt="flag" />
-        <span>{{ lang.Language }}</span>
-      </li>
-    </ul>
-  </div>
-</ng-template>
-
 <ng-template #notificationOverlay>
   <div class="overLay overLay-notification overLay-fall" cdkMenu>
     <ul>
       <li class="notification-head-container">
         <div class="notification-head">Notification</div>
-        <span class="view-all-link">
-          <a>View All</a>
-        </span>
+        <span class="view-all-link"> </span>
       </li>
       <li
         class="notification-message-container"

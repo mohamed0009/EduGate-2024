@@ -1,6 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 import { MatCardModule } from '@angular/material/card';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -12,17 +20,17 @@ import { AdministrationComponent } from './administration/administration.compone
 import { ProfsComponent } from './profs/profs.component';
 import { NotesComponent } from './notes/notes.component';
 import { BodyComponent } from './body/body.component';
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import { OverlayModule } from '@angular/cdk/overlay';
-import { CdkMenuModule } from '@angular/cdk/menu';
-import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './administration/data.service';
-import { StudentService } from './student/StudentService';
 import { StudentMarksComponent } from './student-marks/student-marks.component';
 import { ConsultStudentsComponent } from './consult-students/consult-students.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -50,8 +58,19 @@ import { ConsultStudentsComponent } from './consult-students/consult-students.co
     OverlayModule,
     CdkMenuModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:4200'],
+        disallowedRoutes: ['http://localhost:4200/auth/']
+      }
+    })
   ],
-  providers: [StudentService],
-  bootstrap: [AppComponent],
+  providers: [
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    AuthGuard
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
