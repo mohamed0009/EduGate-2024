@@ -14,17 +14,12 @@ export class StudentComponent implements OnInit {
     classe: {
       idClasse: 0,
       nomClasse: '',
-      niveau: '',
-    },
-    utilisateur: {
-      idUtilisateur: 0,
-      nom: '',
-      prenom: '',
-    },
-  };
+      niveau: ''
+    }};
   isModalVisible: boolean = false;
   isEditVisible: boolean = false;
   selectedStudentIndex: number = -1;
+
 
   constructor(private studentService: StudentService) {}
 
@@ -44,11 +39,7 @@ export class StudentComponent implements OnInit {
     this.studentService.addStudent(this.newStudent).subscribe(
       (student) => {
         this.students.push(student);
-        this.newStudent = {
-          idEleve: 0,
-          classe: { idClasse: 0, nomClasse: '', niveau: '' },
-          utilisateur: { idUtilisateur: 0, nom: '', prenom: '' },
-        };
+        this.newStudent = { idEleve: 0, classe: { idClasse: 0, nomClasse: '', niveau: '' } };
         this.isModalVisible = false;
       },
       (error) => console.error(error)
@@ -62,11 +53,7 @@ export class StudentComponent implements OnInit {
     this.isModalVisible = false;
     this.isEditVisible = false;
     this.selectedStudentIndex = -1;
-    this.newStudent = {
-      idEleve: 0,
-      classe: { idClasse: 0, nomClasse: '', niveau: '' },
-      utilisateur: { idUtilisateur: 0, nom: '', prenom: '' },
-    };
+    this.newStudent = { idEleve: 0, classe: { idClasse: 0, nomClasse: '', niveau: '' } };
   }
   editStudent(index: number): void {
     this.selectedStudentIndex = index;
@@ -75,22 +62,17 @@ export class StudentComponent implements OnInit {
   }
   updateStudent(): void {
     console.log('Updating student:', this.newStudent);
-    this.studentService
-      .updateStudent(this.newStudent.idEleve, this.newStudent)
-      .subscribe(
-        () => {
-          this.students[this.selectedStudentIndex] = { ...this.newStudent };
-          this.hideModal();
-        },
-        (error) => console.error(error)
-      );
+    this.studentService.updateStudent(this.newStudent.idEleve, this.newStudent).subscribe(
+      () => {
+        this.students[this.selectedStudentIndex] = { ...this.newStudent };
+        this.hideModal();
+      },
+      (error) => console.error(error)
+    );
   }
   deleteStudent(studentId: number): void {
     this.studentService.deleteStudent(studentId).subscribe(
-      () =>
-        (this.students = this.students.filter(
-          (student) => student.idEleve !== studentId
-        )),
+      () => this.students = this.students.filter(student => student.idEleve !== studentId),
       (error) => console.error(error)
     );
   }

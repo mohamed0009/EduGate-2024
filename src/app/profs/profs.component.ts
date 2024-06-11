@@ -20,7 +20,11 @@ export class ProfsComponent {
   profs: Prof[] = [
     { id: 1, nom: 'John', prenom: 'Doe', date_de_naissance: '01/01/2000', lieu_de_naissance: 'New York', email: 'john.doe@example.com', password: 'password', class: 1 },
     { id: 2, nom: 'Jane', prenom: 'Smith', date_de_naissance: '02/02/2001', lieu_de_naissance: 'Los Angeles', email: 'jane.smith@example.com', password: 'password', class: 2 },
-    { id: 3, nom: 'Alice', prenom: 'Johnson', date_de_naissance: '03/03/2002', lieu_de_naissance: 'Chicago', email: 'alice.johnson@example.com', password: 'password', class: 3 }
+    { id: 3, nom: 'Alice', prenom: 'Johnson', date_de_naissance: '03/03/2002', lieu_de_naissance: 'Chicago', email: 'alice.johnson@example.com', password: 'password', class: 3 },
+    { id: 1, nom: 'John', prenom: 'Doe', date_de_naissance: '01/01/2000', lieu_de_naissance: 'New York', email: 'john.doe@example.com', password: 'password', class: 1 },
+    { id: 2, nom: 'Jane', prenom: 'Smith', date_de_naissance: '02/02/2001', lieu_de_naissance: 'Los Angeles', email: 'jane.smith@example.com', password: 'password', class: 2 },
+    { id: 3, nom: 'Alice', prenom: 'Johnson', date_de_naissance: '03/03/2002', lieu_de_naissance: 'Chicago', email: 'alice.johnson@example.com', password: 'password', class: 3 },
+    { id: 1, nom: 'John', prenom: 'Doe', date_de_naissance: '01/01/2000', lieu_de_naissance: 'New York', email: 'john.doe@example.com', password: 'password', class: 1 }
   ];
 
   selectedClass: string = '';

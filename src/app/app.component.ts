@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth/auth.service';
+import { Component } from '@angular/core';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -11,20 +10,10 @@ interface SideNavToggle {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'], 
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'EduGate';
   isSideNavCollapsed = false;
   screenWidth = 0;
-  isLoggedIn = false;
-
-  constructor(private authService: AuthService) {}
-
-  ngOnInit() {
-    this.authService.checkLoggedInStatus(); // Check login status on component initialization
-    this.authService.isLoggedIn$.subscribe((loggedIn: boolean) => {
-      this.isLoggedIn = loggedIn; // Update login status when it changes
-    });
-  }
 
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;

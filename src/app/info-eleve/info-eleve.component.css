@@ -1,7 +1,6 @@
 .container{
   text-align: center;
-  margin-left: 250px;
-  margin-top: 100px;
+  margin-left: 150px;
 }
 #img{
   height: 250px;
@@ -13,13 +12,12 @@
   }
   form{
     display: inline-block;
-    margin-top: 20px;
   }
   .card-header{
     background-color: #307c49;
   }
   .card{
-    width: 850px;
+    width: 650px;
   }
   .input-group-text{
     background-color: #bdf1bf;
@@ -29,5 +27,4 @@
   h5{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: underline;
-    color: rgb(22, 79, 41);
   }

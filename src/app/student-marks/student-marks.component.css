@@ -1,3 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
 .select-container {
     display: flex;
     align-items: center;
@@ -30,7 +37,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; /* Only show the bottom border for rows */
     padding: 12px;
     text-align: left;
     color: #000; /* Change text color to black */
@@ -39,6 +46,7 @@ th, td {
 th {
     background-color: #f4f4f4;
     font-weight: bold;
+    border-bottom: 2px solid #ddd; /* Stronger border for the header row */
 }
 
 tr:nth-child(even) {
@@ -63,4 +71,59 @@ tr:hover {
     color: #333; /* Darker color for better readability */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
     text-align: center; /* Center align the text */
+}
+
+.button {
+    --color: #00A97F;
+    padding: 0.1em 0.3em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+    margin: 4px;
+}
+
+.button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.button::before {
+    top: -1em;
+    left: -1em;
+}
+
+.button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.button:hover {
+    color: rgb(10, 25, 30);
+}
+
+.button:active {
+    filter: brightness(.8);
 }

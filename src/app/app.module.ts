@@ -26,6 +26,7 @@ import { ConsultStudentsComponent } from './consult-students/consult-students.co
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { TeacherMarksComponent } from './teacher-marks/teacher-marks.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -47,6 +48,7 @@ export function tokenGetter() {
     HeaderComponent,
     StudentMarksComponent,
     ConsultStudentsComponent,
+    TeacherMarksComponent, // Add TeacherMarksComponent here
   ],
   imports: [
     BrowserModule,
@@ -60,8 +62,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['localhost:8080'],
-        disallowedRoutes: ['http://localhost:8080/auth/']
+        allowedDomains: ['localhost:4200'],
+        disallowedRoutes: ['http://localhost:4200/auth/']
       }
     })
   ],

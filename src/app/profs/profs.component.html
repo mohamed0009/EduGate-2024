@@ -21,33 +21,33 @@
         <th>Mot de Passe</th>
         <th>Action</th>
       </tr>
-  </thead>
-  <tbody class="table-group-divider">
-
-    <tr *ngFor="let prof of filteredProfs">
-      <td>{{ prof.id }}</td>
-      <td>{{ prof.nom }}</td>
-      <td>{{ prof.prenom }}</td>
-      <td>{{ prof.date_de_naissance }}</td>
-      <td>{{ prof.lieu_de_naissance }}</td>
-      <td>{{ prof.email }}</td>
-      <td>{{ prof.password }}</td>
-      <td>
-        <button (click)="openProfModal(prof)">Modifier</button>
-        <button (click)="deleteProf(prof)">Supprimer</button>
-      </td>
-    </tr>
-  </tbody>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let prof of filteredProfs">
+        <td>{{ prof.id }}</td>
+        <td>{{ prof.nom }}</td>
+        <td>{{ prof.prenom }}</td>
+        <td>{{ prof.date_de_naissance }}</td>
+        <td>{{ prof.lieu_de_naissance }}</td>
+        <td>{{ prof.email }}</td>
+        <td>{{ prof.password }}</td>
+        <td>
+          <button (click)="openProfModal(prof)">Modifier</button>
+          <button (click)="deleteProf(prof)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
-<button (click)="openProfModal(null)" class="btn-ajouter">Ajouter un nouveau professeur</button>
+
+<button (click)="openProfModal(null)" class="btn-ajouter button">Ajouter un nouveau professeur</button>
 
 <div *ngIf="filteredProfs.length === 0" class="no-profs">
   Aucun professeur trouvé.
 </div>
 
 <!-- Modal for Adding/Editing Professors -->
-<div class="modal" [ngClass]="{'hidden': !isProfModalOpen}">
+<div class="modal" [ngClass]="{'show': isProfModalOpen}">
   <div class="modal-content">
     <span class="close" (click)="closeProfModal()">&times;</span>
     <h2>{{ isProfEditMode ? 'Modifier le Professeur' : 'Ajouter un Nouveau Professeur' }}</h2>
@@ -70,7 +70,7 @@
         <option value="2">classe 2</option>
         <option value="3">classe 3</option>
       </select>
-      <button type="submit">{{ isProfEditMode ? 'Modifier' : 'Ajouter' }}</button>
+      <button type="submit" class="button">{{ isProfEditMode ? 'Modifier' : 'Ajouter' }}</button>
     </form>
   </div>
 </div>

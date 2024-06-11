@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
 @import url("@angular/cdk/overlay-prebuilt.css");
 
 * {
@@ -11,7 +12,8 @@
 body {
   position: relative;
   font-family: "Roboto", sans-serif;
-  min-height: 100vh; 
+  height: 100%;
+  /* Add your background pattern here */
   background-image: linear-gradient(#ffffffa1 1.1rem, #cccccc49 1.2rem);
   background-size: 100% 1.2rem;
 }
@@ -22,7 +24,7 @@ body {
   border-radius: 0.5rem;
   background-color: #fff;
   margin: 1.25rem 0;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
 }
 
 .card .card-head {

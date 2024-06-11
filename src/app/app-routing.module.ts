@@ -9,9 +9,11 @@ import { AdministrationComponent } from './administration/administration.compone
 import { StudentMarksComponent } from './student-marks/student-marks.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { TeacherMarksComponent } from './teacher-marks/teacher-marks.component'; // Import TeacherMarksComponent
 
 const routes: Routes = [
   { path: 'student-marks', component: StudentMarksComponent, canActivate: [AuthGuard] },
+  { path: 'teacher-marks', component: TeacherMarksComponent, canActivate: [AuthGuard] }, // Add route for TeacherMarksComponent
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },

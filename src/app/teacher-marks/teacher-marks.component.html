@@ -1,0 +1,77 @@
+<!-- Copy and paste the HTML template from notes.component.html here -->
+<div class="select-container">
+    <label for="classSelect">Classe:</label>
+    <select class="styled-select" id="classSelect" [(ngModel)]="selectedClass">
+      <option value="1">classe sc.Mathematique</option>
+      <option value="2">classe sc.physique</option>
+      <option value="3">classe sc.SVT</option>
+    </select>
+  </div>
+  
+  <div class="sort-container">
+    <label for="sortBy">Trier par:</label>
+    <select class="styled-select" id="sortBy" [(ngModel)]="sortOrder">
+      <option value="id">ID</option>
+      <option value="nom">Nom</option>
+      <option value="note">Note ordre croissant</option>
+      <option value="-note">Note ordre decroissant</option>
+    </select>
+  </div>
+  
+  <div class="table-container">
+    <table *ngIf="selectedClass && filteredNotes.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Note</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of filteredNotes">
+          <td>{{ note.id }}</td>
+          <td>{{ note.nom }}</td>
+          <td>{{ note.prenom }}</td>
+          <td>{{ note.email }}</td>
+          <td>{{ note.note }}</td>
+          <td>
+            <button class="button" (click)="editNoteMode(note)">Modifier</button>
+            <button class="button" (click)="deleteNote(note)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="!selectedClass || filteredNotes.length === 0" class="no-note">
+    <strong>Les notes ne sont pas encore disponibles.</strong>
+  </div>
+  
+  <!-- Modal editing notes -->
+  <div *ngIf="isEditMode" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="cancelEdit()">&times;</span>
+      <h2>Edit Student Note</h2>
+      <form (ngSubmit)="addOrUpdateNote()">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" [(ngModel)]="newNote.nom" name="nom" required>
+  
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" [(ngModel)]="newNote.prenom" name="prenom" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="newNote.email" name="email" required>
+  
+        <label for="note">Note:</label>
+        <input type="number" id="note" [(ngModel)]="newNote.note" name="note" required>
+  
+        <button type="submit"
+        class="button">Enregistrer</button>
+        <button type="button" class="button" (click)="cancelEdit()">Annuler</button>
+      </form>
+    </div>
+  </div>
+  

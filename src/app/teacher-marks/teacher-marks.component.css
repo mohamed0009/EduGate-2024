@@ -1,0 +1,138 @@
+/* Copy and paste the CSS styles from notes.component.css here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .select-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .select-container label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .styled-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #d9ead3;
+    border: none;
+    padding: 5px 10px;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    color: #000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .styled-select::-ms-expand {
+    display: none;
+  }
+  
+  .styled-select:focus {
+    box-shadow: 0 0 3px 1px rgba(22, 127, 6, 0.5);
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;  /* Set background color of table to white */
+    color: #000;  /* Set text color in table to black */
+    margin: 20px 0;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;  /* Add border only to the bottom */
+  }
+  
+  th {
+    background-color: #fff;  /* Set background color of table headers to white */
+    color: #000;  /* Set text color of table headers to black */
+    font-weight: bold;  /* Make table headers bold */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .no-note {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .button {
+    --color: #00A97F;
+    padding: 0.1em 0.3em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+    margin: 4px;
+  }
+  
+  .button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+  }
+  
+  .button::before {
+    top: -1em;
+    left: -1em;
+  }
+  
+  .button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+  }
+  
+  .button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+  }
+  
+  .button:hover {
+    color: rgb(10, 25, 30);
+  }
+  
+  .button:active {
+    filter: brightness(.8);
+  }
+  

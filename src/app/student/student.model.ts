@@ -5,9 +5,4 @@ export interface Student {
     nomClasse: string;
     niveau: string;
   };
-  utilisateur: {
-    idUtilisateur: number;
-    nom: string;
-    prenom: string;
-  };
 }
