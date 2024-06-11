@@ -11,6 +11,8 @@
     <thead>
       <tr>
         <th scope="col">idEleve</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
         <th scope="col">idClasse</th>
         <th scope="col">niveau</th>
         <th scope="col">nomClasse</th>
@@ -20,74 +22,160 @@
     <tbody class="table-group-divider">
       <tr *ngFor="let student of students">
         <td>{{ student.idEleve }}</td>
+        <td>{{ student.utilisateur.nom }}</td>
+        <td>{{ student.utilisateur.prenom }}</td>
         <td>{{ student.classe.idClasse }}</td>
         <td>{{ student.classe.niveau }}</td>
         <td>{{ student.classe.nomClasse }}</td>
         <td>
-          <button class="button" (click)="editStudent(student.idEleve)">Modifier</button>
-          <button class="button" (click)="deleteStudent(student.idEleve)">Supprimer</button>
+          <button class="button" (click)="editStudent(student.idEleve)">
+            Modifier
+          </button>
+          <button class="button" (click)="deleteStudent(student.idEleve)">
+            Supprimer
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
 
   <div>
-    <button class="button" (click)="showModal()">Ajouter un nouvel étudiant</button>
+    <button class="button" (click)="showModal()">
+      Ajouter un nouvel étudiant
+    </button>
   </div>
-  <div class="modal" [ngClass]="{'show': isEditVisible}">
+  <div class="modal" [ngClass]="{ show: isEditVisible }">
     <div class="modal-content">
       <h4>Modification des informations</h4>
       <form>
         <div class="input-group mb-3">
           <span class="input-group-text" id="idEleve">idEleve</span>
-          <input type="text" class="form-control" aria-describedby="idEleve" [(ngModel)]="newStudent.idEleve" name="idEleve" placeholder="idEleve">
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="idEleve"
+            [(ngModel)]="newStudent.idEleve"
+            name="idEleve"
+            placeholder="idEleve"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="nom">Nom</span>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="nom"
+            [(ngModel)]="newStudent.utilisateur.nom"
+            name="nom"
+            placeholder="nom"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="idClasse">Prenom</span>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="prenom"
+            [(ngModel)]="newStudent.utilisateur.prenom"
+            name="prenom"
+            placeholder="prenom"
+          />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="idClasse">idClasse</span>
-          <input type="text" class="form-control" aria-describedby="idClasse" [(ngModel)]="newStudent.classe.idClasse" name="idClasse" placeholder="idClasse">
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="idClasse"
+            [(ngModel)]="newStudent.classe.idClasse"
+            name="idClasse"
+            placeholder="idClasse"
+          />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="nomClasse">nomClasse</span>
-          <input type="text" class="form-control" aria-describedby="nomClasse" [(ngModel)]="newStudent.classe.nomClasse" name="nomClasse" placeholder="nomClasse">
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="nomClasse"
+            [(ngModel)]="newStudent.classe.nomClasse"
+            name="nomClasse"
+            placeholder="nomClasse"
+          />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="niveau">niveau</span>
-          <input type="text" class="form-control" aria-describedby="niveau" [(ngModel)]="newStudent.classe.niveau" name="niveau" placeholder="niveau">
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="niveau"
+            [(ngModel)]="newStudent.classe.niveau"
+            name="niveau"
+            placeholder="niveau"
+          />
         </div>
       </form>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="hideModal()">Annuler</button>
-        <button type="button" class="btn btn-primary" (click)="updateStudent()">Modifier</button>
+        <button type="button" class="btn btn-secondary" (click)="hideModal()">
+          Annuler
+        </button>
+        <button type="button" class="btn btn-primary" (click)="updateStudent()">
+          Modifier
+        </button>
       </div>
-
     </div>
   </div>
-  <div class="modal" [ngClass]="{'show': isModalVisible}">
+  <div class="modal" [ngClass]="{ show: isModalVisible }">
     <div class="modal-content">
       <h4>ajouter un nouvel étudiant</h4>
       <form>
-        <div class="input-group mb-3">
+        <!-- <div class="input-group mb-3">
           <span class="input-group-text" id="idEleve">idEleve</span>
           <input type="text" class="form-control" aria-describedby="idEleve" [(ngModel)]="newStudent.idEleve" name="idEleve" placeholder="idEleve">
-        </div>
+        </div> -->
         <div class="input-group mb-3">
-          <span class="input-group-text" id="idClasse">idClasse</span>
-          <input type="text" class="form-control" aria-describedby="idClasse" [(ngModel)]="newStudent.classe.idClasse" name="idClasse" placeholder="idClasse">
+          <span class="input-group-text" id="idClasse">Classe</span>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="idClasse"
+            [(ngModel)]="newStudent.classe.idClasse"
+            name="idClasse"
+            placeholder="idClasse"
+          />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="nomClasse">nomClasse</span>
-          <input type="text" class="form-control" aria-describedby="nomClasse" [(ngModel)]="newStudent.classe.nomClasse" name="nomClasse" placeholder="nomClasse">
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="nomClasse"
+            [(ngModel)]="newStudent.classe.nomClasse"
+            name="nomClasse"
+            placeholder="nomClasse"
+          />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="niveau">niveau</span>
-          <input type="text" class="form-control" aria-describedby="niveau" [(ngModel)]="newStudent.classe.niveau" name="niveau" placeholder="niveau">
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="niveau"
+            [(ngModel)]="newStudent.classe.niveau"
+            name="niveau"
+            placeholder="niveau"
+          />
         </div>
       </form>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="hideModal()">Annuler</button>
-        <button type="button" class="btn btn-primary" (click)="addStudent()">Ajouter</button>
+        <button type="button" class="btn btn-secondary" (click)="hideModal()">
+          Annuler
+        </button>
+        <button type="button" class="btn btn-primary" (click)="addStudent()">
+          Ajouter
+        </button>
       </div>
     </div>
   </div>

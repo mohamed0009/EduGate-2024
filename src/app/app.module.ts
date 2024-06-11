@@ -27,7 +27,6 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
-
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -61,8 +60,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['localhost:4200'],
-        disallowedRoutes: ['http://localhost:4200/auth/']
+        allowedDomains: ['localhost:8080'],
+        disallowedRoutes: ['http://localhost:8080/auth/']
       }
     })
   ],

@@ -1,7 +1,15 @@
-<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
-<app-header [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth">
-</app-header>
-<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth">
-</app-body>
-<!-- <app-login></app-login> -->
-<!-- <app-forgot-password></app-forgot-password> -->
+<ng-container>
+  <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+  <app-header
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+  ></app-header>
+  <app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+  ></app-body>
+</ng-container>
+
+<ng-template>
+  <app-login></app-login>
+</ng-template>

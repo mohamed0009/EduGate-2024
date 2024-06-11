@@ -7,7 +7,7 @@ import { NotesComponent } from './notes/notes.component';
 import { InfoEleveComponent } from './info-eleve/info-eleve.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { StudentMarksComponent } from './student-marks/student-marks.component';
-import { LoginComponent } from './login/login.component'; // Import LoginComponent
+import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
